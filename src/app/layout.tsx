@@ -1,6 +1,6 @@
 import './globals.css';
 import { Open_Sans } from 'next/font/google';
-import { PageHeader } from '@components/layout';
+import { PageHeader, PageFooter } from '@components/layout';
 
 const sans = Open_Sans({ subsets: ['latin'] });
 
@@ -16,9 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={sans.className}>
-      <body className="mx-auto w-full max-w-7xl px-8">
+      <body className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-8">
         <PageHeader />
-        {children}
+        <main className="grow">{children}</main>
+        <PageFooter />
       </body>
     </html>
   );

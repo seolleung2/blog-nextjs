@@ -12,14 +12,14 @@ export default function PageHeader() {
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false);
 
   return (
-    <header className="relative">
-      <div className="navbar flex h-16 items-center justify-between">
+    <header className="sticky top-0 bg-white">
+      <nav className="navbar flex h-16 items-center justify-between">
         <div className="logo">
           <Link href="/" className="text-2xl font-bold">
-            <span className="flex items-center gap-1.5">
+            <h1 className="flex items-center gap-1.5">
               <GiAcorn className="text-3xl text-amber-500" />
               Dotori Blog
-            </span>
+            </h1>
           </Link>
         </div>
         <ul className="links hidden gap-8 md:flex">
@@ -35,7 +35,7 @@ export default function PageHeader() {
         >
           {!isOpenDropdown ? <GoThreeBars /> : <IoMdClose />}
         </div>
-      </div>
+      </nav>
       <ul
         className={cn(
           'dropdown_menu top-15 absolute w-full overflow-hidden rounded-xl bg-slate-100 opacity-95 duration-500 ease-in-out md:hidden',

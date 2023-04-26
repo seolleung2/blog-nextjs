@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="">
+    <section className="">
       <h1>Main Content</h1>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -68,6 +68,7 @@ export default function Home() {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </p>
-    </main>
+      <p>Hello World!</p>
+    </section>
   );
 }
