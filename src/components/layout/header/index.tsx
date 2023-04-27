@@ -13,7 +13,7 @@ export default function PageHeader() {
 
   return (
     <header className="sticky top-0 bg-white">
-      <nav className="navbar flex h-16 items-center justify-between px-8">
+      <nav className="navbar mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-8">
         <div className="logo">
           <Link href="/" className="text-2xl font-bold">
             <h1 className="flex items-center gap-1.5">
