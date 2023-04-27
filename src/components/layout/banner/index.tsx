@@ -1,17 +1,30 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import ReactRotatingText from 'react-rotating-text';
 import Button from '@components/button';
+import img1 from '../../../../public/images/main.jpg';
+import img2 from '../../../../public/images/main2.png';
+import img3 from '../../../../public/images/main3.jpg';
+import img4 from '../../../../public/images/main4.jpg';
+
+const backgroundArr = [img1, img2, img3, img4];
 
 export default function PageBanner() {
   const router = useRouter();
 
+  const [randomImageIndex, setRandomImageIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * backgroundArr.length);
+    setRandomImageIndex(randomIndex);
+  }, []);
+
   return (
-    <div className="flex justify-center md:space-x-4">
-      <div className="flex w-full flex-col items-center justify-center md:w-2/3 md:items-start">
+    <div className="flex justify-center">
+      <div className="flex w-full flex-col items-center justify-center md:w-3/5 md:items-start">
         <h2 className="mb-4 text-2xl font-extrabold text-slate-800 md:text-3xl lg:text-5xl">
           Hello, I&apos;m{' '}
           <span className="text-purple-500">
@@ -40,13 +53,11 @@ export default function PageBanner() {
           />
         </div>
       </div>
-      <div className="hidden justify-center md:flex lg:grow">
+      <div className="hidden grow justify-center md:flex">
         <Image
-          className="h-80 w-80 rounded-full lg:h-[360px] lg:w-[360px]"
-          src="/images/main-image.jpg"
+          className="h-72 w-72 rounded-full p-4 shadow-2xl brightness-110 lg:h-96 lg:w-96"
+          src={backgroundArr[randomImageIndex]}
           alt="Main Image"
-          width={400}
-          height={400}
           priority
         />
       </div>
