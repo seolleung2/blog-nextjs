@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import cn from 'classnames';
 import { GoThreeBars } from 'react-icons/go';
 import { IoMdClose } from 'react-icons/io';
-import { GiAcorn } from 'react-icons/gi';
 import { CATEGORIES } from '@service/constant';
 
 export default function PageHeader() {
@@ -15,11 +15,14 @@ export default function PageHeader() {
     <header className="sticky top-0 bg-white">
       <nav className="navbar mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-8">
         <div className="logo">
-          <Link href="/" className="text-2xl font-bold">
-            <h1 className="flex items-center gap-1.5">
-              <GiAcorn className="text-3xl text-amber-500" />
-              Dotori Blog
-            </h1>
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              priority
+              alt="dotori-mook-logo"
+              width={200}
+              height={30}
+            />
           </Link>
         </div>
         <ul className="links hidden gap-8 md:flex">
