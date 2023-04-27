@@ -2,26 +2,24 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import cn from 'classnames';
 import { GoThreeBars } from 'react-icons/go';
 import { IoMdClose } from 'react-icons/io';
+import { GiAcorn } from 'react-icons/gi';
 import { CATEGORIES } from '@service/constant';
 
 export default function PageHeader() {
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 bg-white">
+    <header className="sticky top-0 bg-white drop-shadow-lg">
       <nav className="navbar mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-8">
         <div className="logo">
-          <Link href="/">
-            <Image
-              src="/images/logo.png"
-              alt="dotori-mook-logo"
-              width={200}
-              height={30}
-            />
+          <Link href="/" className="text-2xl font-bold">
+            <h1 className="flex items-center gap-1.5 font-bold text-slate-800">
+              <GiAcorn className="text-3xl" />
+              Dotori Blog
+            </h1>
           </Link>
         </div>
         <ul className="links hidden gap-8 md:flex">
