@@ -12,7 +12,7 @@ import {
 export default function PageFooter() {
   return (
     <footer className="sticky bottom-0 w-full text-center text-white">
-      <div className="flex justify-center space-x-5 bg-slate-50 py-3.5 text-2xl">
+      <div className="flex justify-center space-x-5 bg-slate-100 py-3.5 text-2xl">
         {SOCIAL_LOGOS.map(({ id, logo, link }) => (
           <Link href={link} legacyBehavior key={id}>
             <a
