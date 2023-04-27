@@ -18,7 +18,7 @@ export default function PageFooter() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-800"
+              className="text-neutral-500 hover:text-neutral-800"
             >
               {logo}
             </a>
@@ -26,11 +26,11 @@ export default function PageFooter() {
         ))}
       </div>
 
-      <div className="bg-neutral-200 p-2 text-center text-sm font-medium text-neutral-900">
-        © 2023 Copyright :{' '}
+      <div className="bg-neutral-800 p-2 text-center text-sm font-medium text-white">
+        © 2023 Copyright{' '}
         <Link className="" href="https://github.com/seolleung2" legacyBehavior>
           <a target="_blank" rel="noopener noreferrer">
-            Dotori Jung
+            by Dotori Jung, All Rights Reserved.
           </a>
         </Link>
       </div>

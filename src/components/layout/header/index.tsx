@@ -13,7 +13,7 @@ export default function PageHeader() {
 
   return (
     <header className="sticky top-0 bg-white">
-      <nav className="navbar flex h-16 items-center justify-between">
+      <nav className="navbar flex h-16 items-center justify-between px-8">
         <div className="logo">
           <Link href="/" className="text-2xl font-bold">
             <h1 className="flex items-center gap-1.5">
@@ -36,25 +36,27 @@ export default function PageHeader() {
           {!isOpenDropdown ? <GoThreeBars /> : <IoMdClose />}
         </div>
       </nav>
-      <ul
-        className={cn(
-          'dropdown_menu top-15 absolute w-full overflow-hidden rounded-xl bg-slate-100 opacity-95 duration-500 ease-in-out md:hidden',
-          isOpenDropdown ? 'block h-[198px]' : 'h-0'
-        )}
-      >
-        {CATEGORIES.map(({ id, link, category }) => (
-          <Link
-            href={link}
-            key={id}
-            className=""
-            onClick={() => setIsOpenDropdown(false)}
-          >
-            <li className="flex items-center justify-center rounded-md p-3 font-semibold hover:bg-amber-400 focus:bg-amber-400 active:bg-amber-400">
-              {category}
-            </li>
-          </Link>
-        ))}
-      </ul>
+      <div className="absolute w-full px-8">
+        <ul
+          className={cn(
+            'dropdown_menu flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out md:hidden',
+            isOpenDropdown ? 'h-52' : 'h-0'
+          )}
+        >
+          {CATEGORIES.map(({ id, link, category }) => (
+            <Link
+              href={link}
+              key={id}
+              className="w-full px-2"
+              onClick={() => setIsOpenDropdown(false)}
+            >
+              <li className="flex items-center justify-center rounded-md p-3 font-semibold hover:bg-amber-400 focus:bg-amber-400 active:bg-amber-400">
+                {category}
+              </li>
+            </Link>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }
