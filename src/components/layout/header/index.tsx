@@ -18,7 +18,6 @@ export default function PageHeader() {
           <Link href="/">
             <Image
               src="/images/logo.png"
-              priority
               alt="dotori-mook-logo"
               width={200}
               height={30}
