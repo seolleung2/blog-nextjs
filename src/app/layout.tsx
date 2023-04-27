@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={sans.className}>
-      <body className="flex min-h-screen flex-col bg-[#f8f8f8]">
+      <body className="flex min-h-screen flex-col bg-light">
         <PageHeader />
         <main className="mx-auto w-full max-w-7xl grow p-8">{children}</main>
         <PageFooter />
