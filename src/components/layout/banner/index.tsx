@@ -25,16 +25,16 @@ export default function PageBanner() {
   return (
     <div className="flex justify-center">
       <div className="flex w-full flex-col items-center justify-center md:w-3/5 md:items-start">
-        <h2 className="mb-4 text-2xl font-extrabold text-slate-800 md:text-3xl lg:text-5xl">
+        <h2 className="mb-4 select-none text-2xl font-extrabold text-slate-800 md:text-3xl lg:text-5xl">
           Hello, I&apos;m{' '}
           <span className="text-purple-500">
             <ReactRotatingText
-              items={['Kwangmook', 'Creative Dev', 'Selt-Confident']}
+              items={['Kwangmook', 'Creative Dev', 'Junior Dev']}
             />
           </span>
           .
         </h2>
-        <h2 className="mb-8 text-2xl font-extrabold text-slate-800 md:text-3xl lg:text-5xl">
+        <h2 className="mb-8 select-none text-2xl font-extrabold text-slate-800 md:text-3xl lg:text-5xl">
           Frontend Developer
         </h2>
         <p className="mb-7 text-lg font-bold text-slate-500 md:text-xl lg:text-2xl">
