@@ -12,7 +12,7 @@ export default function PageHeader() {
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 bg-white drop-shadow-lg">
+    <header className="sticky top-0 z-10 bg-white drop-shadow-lg">
       <nav className="navbar mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-8">
         <div className="logo">
           <Link href="/" className="text-2xl font-bold">
@@ -22,7 +22,7 @@ export default function PageHeader() {
             </h1>
           </Link>
         </div>
-        <ul className="links hidden gap-8 md:flex">
+        <ul className="links md:flex hidden gap-8">
           {CATEGORIES.map(({ id, link, category }) => (
             <li key={id}>
               <Link href={link}>{category}</Link>
@@ -30,7 +30,7 @@ export default function PageHeader() {
           ))}
         </ul>
         <div
-          className="toggle_btn block cursor-pointer text-2xl md:hidden"
+          className="toggle_btn md:hidden block cursor-pointer text-2xl"
           onClick={() => setIsOpenDropdown(!isOpenDropdown)}
         >
           {!isOpenDropdown ? <GoThreeBars /> : <IoMdClose />}
@@ -39,7 +39,7 @@ export default function PageHeader() {
       <div className="absolute w-full px-8">
         <ul
           className={cn(
-            'dropdown_menu flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out md:hidden',
+            'dropdown_menu md:hidden flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out',
             isOpenDropdown ? 'h-52' : 'h-0'
           )}
         >
