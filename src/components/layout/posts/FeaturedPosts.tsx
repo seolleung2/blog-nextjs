@@ -1,9 +1,9 @@
-import { getAllPosts } from '@service/posts';
 import React from 'react';
+import { getFeaturedPosts } from '@service/posts';
 import PostList from './PostList';
 
 export default async function FeaturedPosts() {
-  const posts = await getAllPosts();
+  const posts = await getFeaturedPosts();
 
   return (
     <section className="mt-6">

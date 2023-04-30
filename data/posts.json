@@ -13,15 +13,15 @@
     "date": "2022-04-25",
     "categories": ["React", "NFT", "Solidity", "Pinata"],
     "path": "NFT-Marketplace-in-React",
-    "featured": false
+    "featured": true
   },
   {
     "title": "Rust & WebAssembly with JS (TS) - The Practical Guide",
     "description": "Learn how to code in Rust! Compile the code to WebAssembly, prepare JS/TS frontend and finish the course by creating the practical Snake game that can run in any browser.",
-    "date": "2022-03-25",
+    "date": "2022-03-17",
     "categories": ["Rust", "WebAssembly"],
     "path": "Rust-webAssembly-with-JS",
-    "featured": false
+    "featured": true
   },
   {
     "title": "Unity 2D With C# - Complete Game Dev Course",
@@ -34,9 +34,9 @@
   {
     "title": "Web Development & Code 101 - Full Guide [2022]",
     "description": "Learn programming in JS language, HTML, and CSS. Create a Web Application made in React JS. The path to the final project includes many assignments, code exercises, and challenges.",
-    "date": "2021-05-25",
+    "date": "2021-05-08",
     "categories": ["HTML", "CSS", "Javascript", "NodeJS", "React"],
     "path": "Web-Development-Full-Guide-2022",
-    "featured": false
+    "featured": true
   }
 ]
