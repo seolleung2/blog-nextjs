@@ -16,7 +16,7 @@ export default function CarouselPosts({ posts }: Props) {
     <Carousel
       responsive={PostsResponsive}
       removeArrowOnDeviceType={['mobile']}
-      containerClass="rounded-md py-8"
+      containerClass="rounded-md pb-8"
       sliderClass=""
       itemClass="md:pr-4"
       showDots
