@@ -1,5 +1,5 @@
 import { PageBanner } from '@components/layout';
-import { FeaturedPosts } from '@components/layout/posts';
+import { FeaturedPosts, RegularPosts } from '@components/layout/posts';
 
 export default function Home() {
   return (
@@ -7,6 +7,8 @@ export default function Home() {
       <PageBanner />
       {/* @ts-expect-error Async Server Component */}
       <FeaturedPosts />
+      {/* @ts-expect-error Async Server Component */}
+      <RegularPosts />
     </section>
   );
 }

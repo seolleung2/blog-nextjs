@@ -21,7 +21,7 @@
     "date": "2022-03-17",
     "categories": ["Rust", "WebAssembly"],
     "path": "Rust-webAssembly-with-JS",
-    "featured": true
+    "featured": false
   },
   {
     "title": "Unity 2D With C# - Complete Game Dev Course",
@@ -37,6 +37,6 @@
     "date": "2021-05-08",
     "categories": ["HTML", "CSS", "Javascript", "NodeJS", "React"],
     "path": "Web-Development-Full-Guide-2022",
-    "featured": true
+    "featured": false
   }
 ]
