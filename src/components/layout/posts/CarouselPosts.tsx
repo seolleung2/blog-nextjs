@@ -17,8 +17,8 @@ export default function CarouselPosts({ posts }: Props) {
       responsive={PostsResponsive}
       removeArrowOnDeviceType={['mobile']}
       containerClass="rounded-md pb-8"
-      sliderClass=""
-      itemClass="md:pr-4"
+      sliderClass="md:gap-4"
+      itemClass=""
       showDots
       autoPlay
       infinite
