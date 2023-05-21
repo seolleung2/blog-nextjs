@@ -25,6 +25,7 @@ export default function CarouselCategories({
   return (
     <Carousel
       responsive={CategoriesResponsive}
+      removeArrowOnDeviceType={['mobile']}
       containerClass="p-1"
       sliderClass="space-x-5 items-center h-12"
       itemClass="max-w-fit"
@@ -40,13 +41,13 @@ export default function CarouselCategories({
           <span
             key={idx}
             className={cn(
-              'inline-block cursor-pointer rounded-md border px-2 py-1 font-semibold transition-all duration-300 hover:origin-bottom hover:-rotate-3',
+              'inline-block cursor-pointer rounded-md border px-2 py-1 font-semibold underline-offset-4 transition-all duration-300 hover:origin-bottom hover:-rotate-3 hover:underline',
               targetPalette?.border,
               targetPalette?.background,
               targetPalette?.color,
               targetPalette?.hover,
               currentCategory === category &&
-                'border-4 border-double font-black'
+                'border-4 border-double font-black underline decoration-double'
             )}
             onClick={handleClick.bind(null, category)}
           >
