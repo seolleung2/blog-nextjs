@@ -25,7 +25,7 @@ export default function PostItem({
           className="hidden h-28 w-28 rounded-lg object-cover group-hover:brightness-110 xs:m-auto xs:block lg:h-1/2 lg:w-full"
         />
         <div className="my-2 ml-1 flex w-full flex-col justify-start px-1 py-2 lg:m-0 lg:h-1/2 lg:px-2">
-          <div className="mb-1 line-clamp-1 text-xs font-medium text-rose-600 lg:text-sm">
+          <div className="mb-1 line-clamp-1 text-xs font-medium text-gray-400 lg:text-sm">
             {categories.map((category, index) => (
               <span key={index}>#{category} </span>
             ))}
