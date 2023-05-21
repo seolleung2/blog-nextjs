@@ -79,3 +79,55 @@ export const CategoriesResponsive = {
     items: 3,
   },
 };
+
+export const ColorPaletteOfCategories = [
+  {
+    id: 0,
+    border: 'border-rose-400',
+    background: 'bg-rose-100',
+    color: 'text-rose-700',
+    hover: 'bg-rose-200',
+  },
+  {
+    id: 1,
+    border: 'border-orange-400',
+    background: 'bg-orange-100',
+    color: 'text-orange-700',
+    hover: 'bg-orange-200',
+  },
+  {
+    id: 2,
+    border: 'border-yellow-400',
+    background: 'bg-yellow-100',
+    color: 'text-yellow-700',
+    hover: 'bg-yellow-200',
+  },
+  {
+    id: 3,
+    border: 'border-green-400',
+    background: 'bg-green-100',
+    color: 'text-green-700',
+    hover: 'bg-green-200',
+  },
+  {
+    id: 4,
+    border: 'border-blue-400',
+    background: 'bg-blue-100',
+    color: 'text-blue-700',
+    hover: 'bg-blue-200',
+  },
+  {
+    id: 5,
+    border: 'border-indigo-400',
+    background: 'bg-indigo-100',
+    color: 'text-indigo-700',
+    hover: 'bg-indigo-200',
+  },
+  {
+    id: 6,
+    border: 'border-violet-400',
+    background: 'bg-violet-100',
+    color: 'text-violet-700',
+    hover: 'bg-violet-200',
+  },
+];
