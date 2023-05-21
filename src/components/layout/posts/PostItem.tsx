@@ -15,9 +15,10 @@ export default function PostItem({
   const fullDate = new Date(date);
   const monthIndex = fullDate.getMonth();
   const blogDate = fullDate.getDate();
+  const lowerCasePath = path.toLowerCase();
 
   return (
-    <Link href={`/posts/${path}`}>
+    <Link href={`/posts/${lowerCasePath}`}>
       <article className="group relative flex h-32 w-full cursor-pointer select-none rounded-lg bg-white px-1 shadow-lg lg:h-80 lg:flex-col lg:p-2">
         <Image
           src={postImage}
