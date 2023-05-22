@@ -1,11 +1,11 @@
+import { getBlogs } from '@service/lib/blogs';
 import { CategorizedPosts } from '@components/layout/posts';
-import { getAllPosts } from '@service/posts';
 
 export default async function PostsPage() {
   const getAllCategories = () => {
     const allCategories: string[] = ['All'];
-    posts.forEach((post) => {
-      const { categories } = post;
+    blogs.forEach((blog) => {
+      const { categories } = blog;
       categories.forEach((category) => {
         if (!allCategories.includes(category)) allCategories.push(category);
       });
@@ -13,8 +13,8 @@ export default async function PostsPage() {
     return allCategories;
   };
 
-  const posts = await getAllPosts();
+  const blogs = await getBlogs();
   const categories = getAllCategories();
 
-  return <CategorizedPosts posts={posts} categories={categories} />;
+  return <CategorizedPosts blogs={blogs} categories={categories} />;
 }

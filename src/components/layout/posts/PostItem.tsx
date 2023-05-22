@@ -1,28 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Post } from '@service/posts';
+import { Blog } from '@interfaces/Blog';
 import { MONTH_NAMES } from '@service/constant';
-import postImage from '../../../../public/images/main2.png';
 
 type Props = {
-  post: Post;
+  blog: Blog;
 };
 
 export default function PostItem({
-  post: { path, title, categories, description, date },
+  blog: { title, categories, description, coverImage, date, slug },
 }: Props) {
   const fullDate = new Date(date);
   const monthIndex = fullDate.getMonth();
   const blogDate = fullDate.getDate();
-  const lowerCasePath = path.toLowerCase();
 
   return (
-    <Link href={`/posts/${lowerCasePath}`}>
+    <Link href={`/posts/${slug}`}>
       <article className="group relative flex h-32 w-full cursor-pointer select-none rounded-lg bg-white px-1 shadow-lg lg:h-80 lg:flex-col lg:p-2">
         <Image
-          src={postImage}
+          src={coverImage}
           alt="post-thumbnail"
+          width={120}
+          height={120}
           className="hidden h-28 w-28 rounded-lg object-cover group-hover:brightness-110 xs:m-auto xs:block lg:h-1/2 lg:w-full"
         />
         <div className="my-2 ml-1 flex w-full flex-col justify-start px-1 py-2 lg:m-0 lg:h-1/2 lg:px-2">

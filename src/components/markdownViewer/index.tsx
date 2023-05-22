@@ -8,7 +8,10 @@ type Props = {
 
 export default function MarkdownViewer({ content }: Props) {
   return (
-    <ReactMarkdown className="prose lg:prose-xl" remarkPlugins={[remarkGfm]}>
+    <ReactMarkdown
+      className="prose min-w-full lg:prose-xl"
+      remarkPlugins={[remarkGfm]}
+    >
       {content}
     </ReactMarkdown>
   );

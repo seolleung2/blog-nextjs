@@ -5,6 +5,8 @@ author: Lady Gaga
 authorImage: https://thrangra.sirv.com/Ethereum_blue_light-small.jpg
 coverImage: https://thrangra.sirv.com/Ethereum_blue_light-small.jpg
 date: '2022-04-25'
+categories: ['React', 'NFT', 'Solidity', 'Pinata']
+featured: true
 ---
 
 Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, etc. No config is necessary.

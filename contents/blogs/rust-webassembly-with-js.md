@@ -5,6 +5,8 @@ author: Lady Gaga
 authorImage: https://thrangra.sirv.com/Rust_small.jpg
 coverImage: https://thrangra.sirv.com/Rust_small.jpg
 date: '2022-03-25'
+categories: ['Rust', 'WebAssembly']
+featured: false
 ---
 
 **What is Rust?**
