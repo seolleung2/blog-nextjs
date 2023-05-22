@@ -3,15 +3,15 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Post } from '@service/posts';
+import { Blog } from '@interfaces/Blog';
 import { PostsResponsive } from '@service/constant';
 import PostItem from './PostItem';
 
 type Props = {
-  posts: Post[];
+  blogs: Blog[];
 };
 
-export default function CarouselPosts({ posts }: Props) {
+export default function CarouselPosts({ blogs }: Props) {
   return (
     <Carousel
       responsive={PostsResponsive}
@@ -23,9 +23,9 @@ export default function CarouselPosts({ posts }: Props) {
       autoPlay
       infinite
     >
-      {posts.map((post) => (
-        <div key={post.title}>
-          <PostItem post={post} />
+      {blogs.map((blog) => (
+        <div key={blog.title}>
+          <PostItem blog={blog} />
         </div>
       ))}
     </Carousel>

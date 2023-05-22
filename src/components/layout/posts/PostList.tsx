@@ -1,17 +1,17 @@
 import React from 'react';
-import { Post } from '@service/posts';
+import { Blog } from '@interfaces/Blog';
 import PostItem from './PostItem';
 
 type Props = {
-  posts: Post[];
+  blogs: Blog[];
 };
 
-export default function PostList({ posts }: Props) {
+export default function PostList({ blogs }: Props) {
   return (
     <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-      {posts.map((post) => (
-        <li key={post.title}>
-          <PostItem post={post} />
+      {blogs.map((blog) => (
+        <li key={blog.title}>
+          <PostItem blog={blog} />
         </li>
       ))}
     </ul>

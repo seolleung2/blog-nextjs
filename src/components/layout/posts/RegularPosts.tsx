@@ -1,15 +1,15 @@
 import React from 'react';
-import { getRegularPosts } from '@service/posts';
+import { getRegularBlogs } from '@service/lib/blogs';
 import CarouselPosts from './CarouselPosts';
 
 export default async function RegularPosts() {
-  const posts = await getRegularPosts();
+  const blogs = await getRegularBlogs();
   return (
     <section className="mt-12">
       <h2 className="mb-4 text-xl font-bold text-slate-800 lg:text-2xl">
         You May Like
       </h2>
-      <CarouselPosts posts={posts} />
+      <CarouselPosts blogs={blogs} />
     </section>
   );
 }

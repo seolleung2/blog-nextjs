@@ -5,6 +5,8 @@ author: Lady Gaga
 authorImage: https://thrangra.sirv.com/Course_logo%20copy.jpg
 coverImage: https://thrangra.sirv.com/Course_logo%20copy.jpg
 date: '2021-05-25'
+categories: ['HTML', 'CSS', 'Javascript', 'NodeJS', 'React']
+featured: false
 ---
 
 **What is Javascript?**
