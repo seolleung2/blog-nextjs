@@ -37,8 +37,7 @@ export default async function PostPage({ params: { slug } }: Props) {
 export const generateStaticParams = async () => {
   // * 모든 블로그 포스트 세부 내용 페이지들을 미리 만들어 놓기 (SSG)
   const posts = await getAllPosts();
-
   return posts.map((post) => ({
-    slug: post.path,
+    slug: post.path.toLowerCase(),
   }));
 };
