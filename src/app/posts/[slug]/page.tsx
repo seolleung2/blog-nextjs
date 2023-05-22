@@ -2,12 +2,15 @@ import React from 'react';
 import { redirect } from 'next/navigation';
 import { getBlogBySlug, getBlogs } from '@service/lib/blogs';
 import MarkdownViewer from '@components/markdownViewer';
+import Utterances from '@components/utterances';
 
 type Props = {
   params: {
     slug: string;
   };
 };
+
+const utterancesRepo = 'seolleung2/blog-nextjs';
 
 // * 동적인 메타데이터 생성 generateMetadata
 export const generateMetadata = async ({ params: { slug } }: Props) => {
@@ -26,6 +29,7 @@ export default async function PostPage({ params: { slug } }: Props) {
   return (
     <section>
       <MarkdownViewer content={blog.content} />
+      <Utterances repo={utterancesRepo} path={blog.slug} />
     </section>
   );
 }
