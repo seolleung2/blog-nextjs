@@ -1,6 +1,7 @@
 import React from 'react';
-import { notFound, redirect } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { getAllPosts, getPost, getPostData } from '@service/posts';
+import MarkdownViewer from '@components/markdownViewer';
 
 type Props = {
   params: {
@@ -26,10 +27,7 @@ export default async function PostPage({ params: { slug } }: Props) {
 
   return (
     <section>
-      <span>{post.date.toString()}</span>
-      <h2>{post.title}</h2>
-      <p>{post.description}</p>
-      <pre>{post.content}</pre>
+      <MarkdownViewer content={post.content} />
     </section>
   );
 }
