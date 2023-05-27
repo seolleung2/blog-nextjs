@@ -1,8 +1,11 @@
 import React from 'react';
+import Image from 'next/image';
 import { redirect } from 'next/navigation';
+import { AiTwotoneCalendar } from 'react-icons/ai';
 import { getBlogBySlug, getBlogs } from '@service/lib/blogs';
 import MarkdownViewer from '@components/markdownViewer';
 import Utterances from '@components/utterances';
+import MarkdownHeader from '@components/markdownHeader';
 
 type Props = {
   params: {
@@ -24,13 +27,15 @@ export const generateMetadata = async ({ params: { slug } }: Props) => {
 
 export default async function PostPage({ params: { slug } }: Props) {
   const blog = await getBlogBySlug(slug);
+  console.log('blog', blog);
   if (!blog) redirect('/posts');
 
   return (
-    <section>
+    <article>
+      <MarkdownHeader blog={blog} />
       <MarkdownViewer content={blog.content} />
       <Utterances repo={utterancesRepo} path={blog.slug} />
-    </section>
+    </article>
   );
 }
 
