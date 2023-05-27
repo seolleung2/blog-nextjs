@@ -6,7 +6,12 @@ const nextConfig = {
   swcMinify: true,
   images: {
     dangerouslyAllowSVG: true,
-    domains: ['tailwindui.com', 'images.unsplash.com', 'thrangra.sirv.com'],
+    domains: [
+      'tailwindui.com',
+      'images.unsplash.com',
+      'thrangra.sirv.com',
+      'octodex.github.com',
+    ],
   },
 };
 
