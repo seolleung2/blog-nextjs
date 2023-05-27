@@ -27,7 +27,6 @@ export const generateMetadata = async ({ params: { slug } }: Props) => {
 
 export default async function PostPage({ params: { slug } }: Props) {
   const blog = await getBlogBySlug(slug);
-  console.log('blog', blog);
   if (!blog) redirect('/posts');
 
   return (
