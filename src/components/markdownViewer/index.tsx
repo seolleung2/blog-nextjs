@@ -43,6 +43,16 @@ export default function MarkdownViewer({ content }: Props) {
             height={350}
           />
         ),
+        a: (data) => (
+          <a
+            className="overflow-hidden break-all"
+            href={data.href}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            {data.href}
+          </a>
+        ),
       }}
     >
       {content}
