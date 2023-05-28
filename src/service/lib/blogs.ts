@@ -1,9 +1,9 @@
-import { join } from 'path';
 import { Blog } from '@interfaces/Blog';
 import {
-  getAllItems,
   getDir,
-  getFileNames,
+  getAllFileNameWithExtension,
+  getAllFilePaths,
+  getAllItems,
   getItemInPath,
   markdownToHtml,
 } from './md';
@@ -11,16 +11,28 @@ import {
 const BLOG_DIR = getDir('/contents/blogs');
 
 const getBlogFileNames = () => {
-  return getFileNames(BLOG_DIR);
+  return getAllFileNameWithExtension(BLOG_DIR);
+};
+
+const getFullDirByFilename = (fileName: string) => {
+  const allDirectories = getAllFilePaths(BLOG_DIR);
+  const targetDir = allDirectories.find((dir) => dir.includes(fileName));
+
+  return targetDir;
 };
 
 const getBlogsSlugs = (): string[] => {
-  return getBlogFileNames().map((fileName) => fileName.replace(/\.md$/, ''));
+  return getBlogFileNames().map((fileName: any) =>
+    fileName.replace(/\.md$/, '')
+  );
 };
 
 const getBlog = (fileName: string): Blog => {
-  const blog = getItemInPath(join(BLOG_DIR, fileName)) as Blog;
+  const fullDir = getFullDirByFilename(fileName) as string;
+
+  const blog = getItemInPath(fullDir) as Blog;
   blog.slug = fileName.replace(/\.md$/, '');
+
   return blog;
 };
 

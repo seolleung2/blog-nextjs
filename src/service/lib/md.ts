@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { join } from 'path';
+import { join, basename } from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
@@ -10,6 +10,35 @@ const getDir = (path: string) => join(process.cwd(), path);
 
 const getFileNames = (dir: string): string[] => {
   return fs.readdirSync(dir);
+};
+
+const pushAllFilePathsOnArrayByRecursive = (
+  dir: string,
+  filePaths: string[]
+) => {
+  fs.readdirSync(dir, { withFileTypes: true }).forEach((file, idx) => {
+    const path = `${dir}/${file.name}`;
+
+    if (file.isDirectory()) {
+      pushAllFilePathsOnArrayByRecursive(path, filePaths);
+    } else {
+      filePaths.push(path);
+    }
+  });
+};
+
+const getAllFilePaths = (dir: string) => {
+  const allFilePaths: string[] = [];
+  pushAllFilePathsOnArrayByRecursive(dir, allFilePaths);
+
+  return allFilePaths;
+};
+
+const getAllFileNameWithExtension = (dir: string) => {
+  const result = (getAllFilePaths(dir) || []).map((filePath) =>
+    basename(filePath)
+  );
+  return result;
 };
 
 const getItemInPath = (filePath: string): MarkdownItem => {
@@ -35,4 +64,12 @@ const markdownToHtml = async (markdown: string) => {
   return result.toString();
 };
 
-export { getDir, getFileNames, getItemInPath, getAllItems, markdownToHtml };
+export {
+  getDir,
+  getFileNames,
+  getAllFilePaths,
+  getAllFileNameWithExtension,
+  getItemInPath,
+  getAllItems,
+  markdownToHtml,
+};
