@@ -30,7 +30,7 @@ export default async function PostPage({ params: { slug } }: Props) {
   if (!blog) redirect('/posts');
 
   return (
-    <article>
+    <article className="flex flex-col gap-14">
       <MarkdownHeader blog={blog} />
       <MarkdownViewer content={blog.content} />
       <Utterances repo={utterancesRepo} path={blog.slug} />

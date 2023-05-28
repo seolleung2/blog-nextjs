@@ -152,7 +152,7 @@ Autoconverted link https://github.com/nodeca/babelfish (enable linkify to see)
 
 Like links, Images also have a footnote style syntax
 
-![Alt text][id]
+![kirby](/images/main2.png)
 
 With a reference later in the document defining the URL location:
 
