@@ -1,11 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
 import { redirect } from 'next/navigation';
-import { AiTwotoneCalendar } from 'react-icons/ai';
 import { getBlogBySlug, getBlogs } from '@service/lib/blogs';
 import MarkdownViewer from '@components/markdownViewer';
 import Utterances from '@components/utterances';
 import MarkdownHeader from '@components/markdownHeader';
+import TableOfContents from '@components/toc';
 
 type Props = {
   params: {
@@ -30,15 +29,13 @@ export default async function PostPage({ params: { slug } }: Props) {
   if (!blog) redirect('/posts');
 
   return (
-    <section className="relative flex flex-col xl:flex-row">
-      <article className="flex max-w-4xl flex-col gap-14">
+    <section className="relative flex flex-col xl:flex-row xl:space-x-28">
+      <article className="flex max-w-4xl grow flex-col gap-14">
         <MarkdownHeader blog={blog} />
         <MarkdownViewer content={blog.content} />
         <Utterances repo={utterancesRepo} path={blog.slug} />
       </article>
-      <aside className="hidden h-auto grow border border-blue-600 lg:flex">
-        Table Of Contents
-      </aside>
+      <TableOfContents />
     </section>
   );
 }
