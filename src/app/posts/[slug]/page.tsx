@@ -30,11 +30,16 @@ export default async function PostPage({ params: { slug } }: Props) {
   if (!blog) redirect('/posts');
 
   return (
-    <article className="flex flex-col gap-14">
-      <MarkdownHeader blog={blog} />
-      <MarkdownViewer content={blog.content} />
-      <Utterances repo={utterancesRepo} path={blog.slug} />
-    </article>
+    <section className="relative flex flex-col xl:flex-row">
+      <article className="flex max-w-4xl flex-col gap-14">
+        <MarkdownHeader blog={blog} />
+        <MarkdownViewer content={blog.content} />
+        <Utterances repo={utterancesRepo} path={blog.slug} />
+      </article>
+      <aside className="hidden h-auto grow border border-blue-600 lg:flex">
+        Table Of Contents
+      </aside>
+    </section>
   );
 }
 
