@@ -49,12 +49,13 @@ export default function MarkdownHeader({ blog }: Props) {
       <p className="blog-detail-header-subtitle my-4 text-lg text-gray-600 sm:text-xl">
         {blog.description}
       </p>
-      <div className="relative mx-auto h-72 w-full bg-black sm:h-80 md:h-96">
+      <div className="relative mx-auto h-72 w-full bg-purple-100 sm:h-80 md:h-96">
         <Image
           priority
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
-          src={blog.coverImage}
+          src={blog.coverImage || '/images/default-cover.jpg'}
           alt="cover-image"
         />
       </div>

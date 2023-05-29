@@ -1,9 +1,9 @@
 ---
 title: React-Hook-Form 으로 입력상태를 효과적으로 제어하기 (1). 제어 컴포넌트에 대해
 description: 라이브러리에 앞서 제어 컴포넌트가 무엇인지 실습을 통해 알아봅니다.
-author: Dotori Jung
-authorImage: https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1540&q=50
-coverImage: https://www.opcito.com/hubfs/Control%20%26%20Uncontrolled%20Components_Web.png
+author: Dotori Jung 🌰
+authorImage: /images/me.jpeg
+coverImage:
 date: '2023-05-06'
 categories: ['React']
 featured: true

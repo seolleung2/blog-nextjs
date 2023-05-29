@@ -19,7 +19,7 @@ export default function PostItem({
     <Link href={`/posts/${slug}`}>
       <article className="group relative flex h-32 w-full cursor-pointer select-none rounded-lg bg-white px-1 shadow-lg lg:h-80 lg:flex-col lg:p-2">
         <Image
-          src={coverImage}
+          src={coverImage || '/images/default-cover.jpg'}
           alt="post-thumbnail"
           width={120}
           height={120}
