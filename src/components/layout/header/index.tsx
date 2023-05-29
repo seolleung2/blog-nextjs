@@ -22,7 +22,7 @@ export default function PageHeader() {
             </h1>
           </Link>
         </div>
-        <ul className="links md:flex hidden gap-8">
+        <ul className="links hidden gap-8 md:flex">
           {CATEGORIES.map(({ id, link, category }) => (
             <li key={id}>
               <Link href={link}>{category}</Link>
@@ -30,16 +30,16 @@ export default function PageHeader() {
           ))}
         </ul>
         <div
-          className="toggle_btn md:hidden block cursor-pointer text-2xl"
+          className="toggle_btn block cursor-pointer text-2xl md:hidden"
           onClick={() => setIsOpenDropdown(!isOpenDropdown)}
         >
           {!isOpenDropdown ? <GoThreeBars /> : <IoMdClose />}
         </div>
       </nav>
-      <div className="absolute w-full px-8">
+      <div className="absolute w-full">
         <ul
           className={cn(
-            'dropdown_menu md:hidden flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out',
+            'dropdown_menu flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out md:hidden',
             isOpenDropdown ? 'h-52' : 'h-0'
           )}
         >
