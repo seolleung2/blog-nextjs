@@ -1,5 +1,6 @@
 import './globals.css';
 import { Open_Sans } from 'next/font/google';
+import classNames from 'classnames';
 import { PageHeader, PageFooter } from '@components/layout';
 
 const sans = Open_Sans({ subsets: ['latin'] });
@@ -15,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={sans.className}>
+    <html lang="en" className={classNames(sans.className, 'scroll-smooth')}>
       <body className="flex min-h-screen flex-col bg-light selection:bg-purple-400 selection:text-white">
         <PageHeader />
         <main className="mx-auto w-full max-w-7xl grow p-8">{children}</main>
