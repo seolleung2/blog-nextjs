@@ -17,7 +17,6 @@ export default function MarkdownHeader({ blog }: Props) {
               <span className="sr-only">{blog.author}</span>
               <div className="relative !mb-0 h-10 w-10">
                 <Image
-                  priority
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="rounded-full object-cover"
