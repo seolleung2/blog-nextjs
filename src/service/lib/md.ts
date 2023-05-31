@@ -55,7 +55,11 @@ const getAllItems = (
   fileNames: string[],
   get: (name: string) => MarkdownItem
 ) => {
-  const items = fileNames.map((name) => get(name));
+  const items = fileNames
+    .map((name) => get(name))
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .reverse();
+
   return items;
 };
 

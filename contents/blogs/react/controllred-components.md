@@ -4,7 +4,7 @@ description: 라이브러리에 앞서 제어 컴포넌트가 무엇인지 실�
 author: Dotori Jung 🌰
 authorImage: /images/me.jpeg
 coverImage:
-date: '2023-05-06'
+date: '2023-05-29 23:00:00'
 categories: ['React']
 featured: true
 ---
