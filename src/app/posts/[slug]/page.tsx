@@ -26,7 +26,7 @@ export const generateMetadata = async ({ params: { slug } }: Props) => {
 
 export default async function PostPage({ params: { slug } }: Props) {
   const blog = await getBlogBySlug(slug);
-  if (!blog) redirect('/posts');
+  if (!blog) redirect('/posts'); // OR Render 404 Page
 
   return (
     <section className="relative flex flex-col xl:flex-row xl:space-x-28">

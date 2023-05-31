@@ -4,7 +4,7 @@ description: 한달동안 무슨 일이 있었고 어떻게 발전하고 있는�
 author: Dotori Jung 🌰
 authorImage: /images/me.jpeg
 coverImage: /images/retrospect/230530-main.jpeg
-date: '2023-05-30 23:40:00'
+date: '2023-05-31 20:45:00'
 categories: ['Retrospect']
 featured: true
 ---

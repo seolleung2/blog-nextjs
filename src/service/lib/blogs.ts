@@ -27,13 +27,17 @@ const getBlogsSlugs = (): string[] => {
   );
 };
 
-const getBlog = (fileName: string): Blog => {
+const getBlog = (fileName: string): Blog | null => {
   const fullDir = getFullDirByFilename(fileName) as string;
 
-  const blog = getItemInPath(fullDir) as Blog;
-  blog.slug = fileName.replace(/\.md$/, '');
+  if (fullDir) {
+    const blog = getItemInPath(fullDir) as Blog;
+    blog.slug = fileName.replace(/\.md$/, '');
 
-  return blog;
+    return blog;
+  }
+
+  return null;
 };
 
 const getBlogBySlug = (slug: string) => {
@@ -43,7 +47,7 @@ const getBlogBySlug = (slug: string) => {
 
 const getBlogs = (): Blog[] => {
   const names = getBlogFileNames();
-  return getAllItems(names, getBlog) as Blog[];
+  return getAllItems(names, getBlog as (name: string) => Blog) as Blog[];
 };
 
 const getFeaturedBlogs = (): Blog[] => {
@@ -56,10 +60,17 @@ const getRegularBlogs = (): Blog[] => {
   return allBlogs.filter((blog) => !blog.featured) as Blog[];
 };
 
-const getBlogBySlugWithMarkdown = async (slug: string): Promise<Blog> => {
+const getBlogBySlugWithMarkdown = async (
+  slug: string
+): Promise<Blog | null> => {
   const blog = getBlogBySlug(slug);
-  blog.content = await markdownToHtml(blog.content);
-  return blog;
+
+  if (blog) {
+    blog.content = await markdownToHtml(blog.content);
+    return blog;
+  }
+
+  return null;
 };
 
 export {
