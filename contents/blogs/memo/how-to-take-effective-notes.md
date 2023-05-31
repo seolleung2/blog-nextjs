@@ -4,7 +4,7 @@ description: 유튜브에 소개된 김익한 명지대 교수님, 기록학자�
 author: Dotori Jung 🌰
 authorImage: /images/me.jpeg
 coverImage: /images/memo/memos.png
-date: '2023-05-30'
+date: '2023-05-30 23:30:00'
 categories: ['Memo']
 featured: true
 ---
