@@ -5,6 +5,8 @@ import MarkdownViewer from '@components/markdownViewer';
 import Utterances from '@components/utterances';
 import MarkdownHeader from '@components/markdownHeader';
 import TableOfContents from '@components/toc';
+import ErrorBoundary from '@components/Error';
+import Error from './error';
 
 type Props = {
   params: {
@@ -29,14 +31,16 @@ export default async function PostPage({ params: { slug } }: Props) {
   if (!blog) redirect('/posts'); // OR Render 404 Page
 
   return (
-    <section className="relative flex flex-col xl:flex-row xl:space-x-28">
-      <article className="flex max-w-4xl grow flex-col gap-14">
-        <MarkdownHeader blog={blog} />
-        <MarkdownViewer content={blog.content} />
-        <Utterances repo={utterancesRepo} path={blog.slug} />
-      </article>
-      <TableOfContents />
-    </section>
+    <ErrorBoundary fallback={<Error />}>
+      <section className="relative flex flex-col xl:flex-row xl:space-x-28">
+        <article className="flex max-w-4xl grow flex-col gap-14">
+          <MarkdownHeader blog={blog} />
+          <MarkdownViewer content={blog.content} />
+          <Utterances repo={utterancesRepo} path={blog.slug} />
+        </article>
+        <TableOfContents />
+      </section>
+    </ErrorBoundary>
   );
 }
 
