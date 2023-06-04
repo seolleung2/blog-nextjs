@@ -131,3 +131,5 @@ export const ColorPaletteOfCategories = [
     hover: 'bg-violet-200',
   },
 ];
+
+export const utterancesRepo = 'seolleung2/blog-nextjs';
