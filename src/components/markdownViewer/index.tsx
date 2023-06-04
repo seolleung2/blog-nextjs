@@ -36,7 +36,7 @@ export default function MarkdownViewer({ content }: Props) {
         },
         img: (image: any) => (
           <Image
-            className="max-h-60 w-full object-contain"
+            className="max-h-96 w-full object-contain"
             src={image.src || ''}
             alt={image.alt || ''}
             width={500}
