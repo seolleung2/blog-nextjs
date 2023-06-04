@@ -27,22 +27,34 @@ const getBlogsSlugs = (): string[] => {
   );
 };
 
-const getBlog = (fileName: string): Blog | null => {
+const getBlog = (fileName: string): Blog => {
   const fullDir = getFullDirByFilename(fileName) as string;
 
-  if (fullDir) {
-    const blog = getItemInPath(fullDir) as Blog;
-    blog.slug = fileName.replace(/\.md$/, '');
+  const blog = getItemInPath(fullDir) as Blog;
+  blog.slug = fileName.replace(/\.md$/, '');
 
-    return blog;
-  }
-
-  return null;
+  return blog;
 };
 
 const getBlogBySlug = (slug: string) => {
+  const allBlogs = getBlogs();
+
+  const blog = allBlogs.find((blog) => blog.slug === slug);
+
+  if (!blog)
+    throw new Error(`${slug}에 해당하는 블로그 내용을 찾을 수 없습니다.`);
+
   const fileName = slug + '.md';
-  return getBlog(fileName);
+
+  const index = allBlogs.indexOf(blog);
+  const next = index > 0 ? allBlogs[index - 1] : null;
+  const prev = index < allBlogs.length - 1 ? allBlogs[index + 1] : null;
+
+  return {
+    ...getBlog(fileName),
+    next,
+    prev,
+  };
 };
 
 const getBlogs = (): Blog[] => {

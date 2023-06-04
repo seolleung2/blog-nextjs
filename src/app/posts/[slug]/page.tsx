@@ -1,6 +1,8 @@
 import React from 'react';
-import { getBlogBySlug, getBlogs } from '@service/lib/blogs';
+import { redirect } from 'next/navigation';
 import PostContent from '@components/layout/posts/PostContent';
+import ErrorBoundary from '@components/Error';
+import { getBlogBySlug, getBlogs } from '@service/lib/blogs';
 import Error from './error';
 
 type Props = {
@@ -21,9 +23,13 @@ export const generateMetadata = async ({ params: { slug } }: Props) => {
 
 export default async function PostPage({ params: { slug } }: Props) {
   const blog = await getBlogBySlug(slug);
-  if (!blog) return <Error />;
+  if (!blog) redirect('/posts');
 
-  return <PostContent blog={blog} />;
+  return (
+    <ErrorBoundary fallback={<Error />}>
+      <PostContent blog={blog} />
+    </ErrorBoundary>
+  );
 }
 
 export const generateStaticParams = async () => {
