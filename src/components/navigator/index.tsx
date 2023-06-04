@@ -15,7 +15,7 @@ export default function BlogNavigator({ prev, next }: Props) {
   const router = useRouter();
 
   const moveToPrevPage = () => {
-    router.push(`/posts/${prev.slug}`);
+    if (prev) router.push(`/posts/${prev.slug}`);
   };
 
   const moveToNextPage = () => {
