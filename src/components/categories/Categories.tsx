@@ -1,5 +1,3 @@
-'use client';
-
 import CarouselCategories from './CarouselCategories';
 
 type Props = {

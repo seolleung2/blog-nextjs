@@ -1,10 +1,10 @@
 ---
 title: 'Markdown Extensive Example'
 description: Learn how to write markdown
-author: Lady Gaga
-authorImage: https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1540&q=50
+author: Dotori Jung 🌰
+authorImage: /images/me.jpeg
 coverImage: https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1540&q=50
-date: '2022-05-20'
+date: '2023-05-20'
 categories: ['Markdown']
 featured: false
 ---

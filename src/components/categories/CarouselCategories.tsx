@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -46,8 +44,7 @@ export default function CarouselCategories({
               targetPalette?.background,
               targetPalette?.color,
               targetPalette?.hover,
-              currentCategory === category &&
-                'border-4 border-double font-black underline decoration-double'
+              currentCategory === category && 'border-4 font-black underline'
             )}
             onClick={handleClick.bind(null, category)}
           >

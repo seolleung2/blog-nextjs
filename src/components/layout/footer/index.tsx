@@ -41,12 +41,12 @@ export default function PageFooter() {
 const SOCIAL_LOGOS = [
   {
     id: '1',
-    link: '#',
+    link: 'https://www.facebook.com/dotorimook8808',
     logo: <FaFacebook />,
   },
   {
     id: '2',
-    link: '#',
+    link: 'https://twitter.com/teddyjung8808',
     logo: <FaTwitter />,
   },
   {
@@ -56,7 +56,7 @@ const SOCIAL_LOGOS = [
   },
   {
     id: '4',
-    link: '#',
+    link: 'https://github.com/seolleung2',
     logo: <FaGithub />,
   },
   {
