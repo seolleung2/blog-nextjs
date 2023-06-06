@@ -132,4 +132,4 @@ export const ColorPaletteOfCategories = [
   },
 ];
 
-export const utterancesRepo = 'seolleung2/blog-nextjs';
+export const utterancesRepo = 'seolleung2/dotorimook-log';
