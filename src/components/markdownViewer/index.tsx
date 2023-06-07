@@ -53,6 +53,13 @@ export default function MarkdownViewer({ content }: Props) {
             {data.href}
           </a>
         ),
+        strong: ({ children }) => {
+          return (
+            <strong className="rounded-sm bg-gray-200 px-1.5 py-0.5 text-rose-400">
+              {children}
+            </strong>
+          );
+        },
       }}
     >
       {content}
