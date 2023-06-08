@@ -3,6 +3,10 @@ import { Open_Sans } from 'next/font/google';
 import { Metadata } from 'next';
 import classNames from 'classnames';
 import { PageHeader, PageFooter } from '@components/layout';
+import {
+  GOOGLE_VERIFICATION_CODE,
+  NAVER_VERIFICATION_CODE,
+} from '@service/constant';
 
 const sans = Open_Sans({ subsets: ['latin'] });
 
@@ -13,7 +17,10 @@ export const metadata: Metadata = {
   },
   description: 'Frontend Dev 도토리정의 블로그',
   verification: {
-    google: 'h5hXfhgh2YyYCX6iW7D3Bwbw9z4pIU5ypnJg2sbX-ZM',
+    google: GOOGLE_VERIFICATION_CODE,
+    other: {
+      'naver-site-verification': NAVER_VERIFICATION_CODE,
+    },
   },
 };
 

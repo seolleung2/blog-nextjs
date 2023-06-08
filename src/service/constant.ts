@@ -133,3 +133,9 @@ export const ColorPaletteOfCategories = [
 ];
 
 export const utterancesRepo = 'seolleung2/dotorimook-log';
+
+export const GOOGLE_VERIFICATION_CODE =
+  'h5hXfhgh2YyYCX6iW7D3Bwbw9z4pIU5ypnJg2sbX-ZM';
+
+export const NAVER_VERIFICATION_CODE =
+  '9920e281caffbb58f2bf2c372d244f0aaa60d3c0';
