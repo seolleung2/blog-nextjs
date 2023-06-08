@@ -1,5 +1,11 @@
+import { Metadata } from 'next';
 import { getBlogs } from '@service/lib/blogs';
 import { CategorizedPosts } from '@components/layout/posts';
+
+export const metadata: Metadata = {
+  title: 'All Blog Posts',
+  description: '기술, 개발 관련 블로그 글 모음',
+};
 
 export default async function PostsPage() {
   const getAllCategories = () => {

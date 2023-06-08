@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import PostContent from '@components/layout/posts/PostContent';
 import ErrorBoundary from '@components/Error';
@@ -12,12 +13,14 @@ type Props = {
 };
 
 // * 동적인 메타데이터 생성 generateMetadata
-export const generateMetadata = async ({ params: { slug } }: Props) => {
-  const blog = await getBlogBySlug(slug);
-  if (!blog) return;
+export const generateMetadata = async ({
+  params: { slug },
+}: Props): Promise<Metadata> => {
+  const { title, description } = await getBlogBySlug(slug);
 
   return {
-    title: `Blog | ${blog.title}`,
+    title,
+    description,
   };
 };
 
