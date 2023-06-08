@@ -5,8 +5,8 @@ import {
   getAllFilePaths,
   getAllItems,
   getItemInPath,
-  markdownToHtml,
 } from './md';
+import { cache } from 'react';
 
 const BLOG_DIR = getDir('/contents/blogs');
 
@@ -27,17 +27,17 @@ const getBlogsSlugs = (): string[] => {
   );
 };
 
-const getBlog = (fileName: string): Blog => {
+const getBlog = cache((fileName: string): Blog => {
   const fullDir = getFullDirByFilename(fileName) as string;
 
   const blog = getItemInPath(fullDir) as Blog;
   blog.slug = fileName.replace(/\.md$/, '');
 
   return blog;
-};
+});
 
-const getBlogBySlug = (slug: string) => {
-  const allBlogs = getBlogs();
+const getBlogBySlug = cache(async (slug: string) => {
+  const allBlogs = await getBlogs();
 
   const blog = allBlogs.find((blog) => blog.slug === slug);
 
@@ -55,35 +55,22 @@ const getBlogBySlug = (slug: string) => {
     next,
     prev,
   };
-};
+});
 
-const getBlogs = (): Blog[] => {
+const getBlogs = cache(async (): Promise<Blog[]> => {
   const names = getBlogFileNames();
   return getAllItems(names, getBlog as (name: string) => Blog) as Blog[];
-};
+});
 
-const getFeaturedBlogs = (): Blog[] => {
-  const allBlogs = getBlogs();
+const getFeaturedBlogs = cache(async (): Promise<Blog[]> => {
+  const allBlogs = await getBlogs();
   return allBlogs.filter((blog) => blog.featured) as Blog[];
-};
+});
 
-const getRegularBlogs = (): Blog[] => {
-  const allBlogs = getBlogs();
+const getRegularBlogs = cache(async (): Promise<Blog[]> => {
+  const allBlogs = await getBlogs();
   return allBlogs.filter((blog) => !blog.featured) as Blog[];
-};
-
-const getBlogBySlugWithMarkdown = async (
-  slug: string
-): Promise<Blog | null> => {
-  const blog = getBlogBySlug(slug);
-
-  if (blog) {
-    blog.content = await markdownToHtml(blog.content);
-    return blog;
-  }
-
-  return null;
-};
+});
 
 export {
   getBlogFileNames,
@@ -93,5 +80,4 @@ export {
   getBlog,
   getBlogsSlugs,
   getBlogBySlug,
-  getBlogBySlugWithMarkdown,
 };
