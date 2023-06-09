@@ -11,6 +11,10 @@ import {
 const sans = Open_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  applicationName: "Dotori Jung's Blog Application",
+  creator: 'Kwangmook Jung',
+  publisher: 'Kwangmook Jung',
+  keywords: ['Next.js', 'React', 'JavaScript', 'Developer', 'Frontend'],
   title: {
     default: '도토리정의 DevLog',
     template: '도토리정의 DevLog | %s',
@@ -21,6 +25,14 @@ export const metadata: Metadata = {
     other: {
       'naver-site-verification': NAVER_VERIFICATION_CODE,
     },
+  },
+  openGraph: {
+    title: '도토리정의 DevLog',
+    description: '프론트엔드 개발자 도토리정의 블로그 입니다.',
+    url: 'https://dotorimook-log.vercel.app/',
+    siteName: "Dotori Jung's Blog Application",
+    locale: 'ko_KR',
+    type: 'website',
   },
 };
 
