@@ -3,24 +3,34 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
+import { useTheme } from 'next-themes';
 import { GoThreeBars } from 'react-icons/go';
+import { BsSunFill, BsMoonFill } from 'react-icons/bs';
 import { IoMdClose } from 'react-icons/io';
 import { GiAcorn } from 'react-icons/gi';
 import { CATEGORIES } from '@service/constant';
 
 export default function PageHeader() {
+  const { theme, setTheme } = useTheme();
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false);
+
+  const handleChangeSetTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
 
   return (
     <header className="sticky top-0 z-10 bg-white drop-shadow-lg dark:bg-stone-800">
       <nav className="navbar mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-8">
-        <div className="logo">
+        <div className="logo flex items-center justify-between grow mr-6">
           <Link href="/" className="text-2xl font-bold">
             <h1 className="flex items-center gap-1.5 font-bold text-slate-800 dark:text-white">
               <GiAcorn className="text-3xl" />
               Dotori Blog
             </h1>
           </Link>
+          <button type="button" onClick={handleChangeSetTheme}>
+            {theme === "light" ? <BsMoonFill className="text-2xl" /> : <BsSunFill className="text-2xl" />}
+          </button>
         </div>
         <ul className="links hidden gap-8 md:flex">
           {CATEGORIES.map(({ id, link, category }) => (
@@ -39,7 +49,7 @@ export default function PageHeader() {
       <div className="absolute w-full">
         <ul
           className={cn(
-            'dropdown_menu flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out md:hidden',
+            'dropdown_menu flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out md:hidden dark:bg-slate-700',
             isOpenDropdown ? 'h-52' : 'h-0'
           )}
         >
