@@ -17,7 +17,7 @@ export default function PostItem({
 
   return (
     <Link href={`/posts/${slug}`}>
-      <article className="group relative flex h-32 w-full cursor-pointer select-none rounded-lg bg-white px-1 shadow-lg lg:h-80 lg:flex-col lg:p-2">
+      <article className="group relative flex h-32 w-full cursor-pointer select-none rounded-lg bg-white px-1 shadow-lg lg:h-80 lg:flex-col lg:p-2 dark:shadow-slate-400">
         <Image
           src={coverImage || '/images/default-cover.jpg'}
           alt="post-thumbnail"
@@ -31,10 +31,10 @@ export default function PostItem({
               <span key={index}>#{category} </span>
             ))}
           </div>
-          <h3 className="mb-1.5 line-clamp-2 text-sm font-bold group-hover:text-rose-600 lg:text-base lg:leading-snug">
+          <h3 className="mb-1.5 line-clamp-2 text-sm font-bold group-hover:text-rose-600 lg:text-base lg:leading-snug text-black">
             {title}
           </h3>
-          <p className="line-clamp-2 text-xs lg:line-clamp-3 lg:text-sm lg:leading-snug">
+          <p className="line-clamp-2 text-xs lg:line-clamp-3 lg:text-sm lg:leading-snug text-black">
             {description}
           </p>
         </div>

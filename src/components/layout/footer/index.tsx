@@ -12,13 +12,13 @@ import {
 export default function PageFooter() {
   return (
     <footer className="sticky bottom-0 w-full text-center text-white">
-      <div className="flex justify-center space-x-5 bg-slate-100 py-3.5 text-2xl">
+      <div className="flex justify-center space-x-5 bg-slate-100 py-3.5 text-2xl dark:bg-stone-800">
         {SOCIAL_LOGOS.map(({ id, logo, link }) => (
           <Link href={link} legacyBehavior key={id}>
             <a
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-500 hover:text-neutral-800"
+              className="text-neutral-500 hover:text-neutral-800 dark:text-white"
             >
               {logo}
             </a>
@@ -26,7 +26,7 @@ export default function PageFooter() {
         ))}
       </div>
 
-      <div className="bg-neutral-800 p-2 text-center text-sm font-medium text-white">
+      <div className="bg-neutral-800 p-2 text-center text-sm font-medium text-white dark:bg-stone-900">
         © 2023 Copyright{' '}
         <Link className="" href="https://github.com/seolleung2" legacyBehavior>
           <a target="_blank" rel="noopener noreferrer">

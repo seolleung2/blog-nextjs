@@ -24,19 +24,18 @@ export default function PageBanner() {
   return (
     <div className="flex justify-center">
       <div className="flex w-full flex-col items-center justify-center md:w-3/5 md:items-start">
-        <h2 className="mb-4 select-none text-2xl font-extrabold text-slate-800 md:text-3xl lg:text-5xl">
+        <h2 className="mb-4 select-none text-2xl font-extrabold text-slate-800 md:text-3xl lg:text-5xl dark:text-white">
           Hello, I&apos;m{' '}
-          <span className="text-purple-500">
+          <span className="text-purple-500 dark:text-purple-600">
             <ReactRotatingText
               items={['Kwangmook', 'Creative Dev', 'Junior Dev']}
             />
           </span>
-          .
         </h2>
-        <h2 className="mb-8 select-none text-2xl font-extrabold text-slate-800 md:text-3xl lg:text-5xl">
+        <h2 className="mb-8 select-none text-2xl font-extrabold text-slate-800 md:text-3xl lg:text-5xl dark:text-white">
           Frontend Developer 🌞
         </h2>
-        <p className="mb-7 text-lg font-medium text-slate-500 md:text-xl lg:text-2xl">
+        <p className="mb-7 text-lg font-medium text-slate-500 md:text-xl lg:text-2xl dark:text-slate-300">
           안녕하세요! 2년차에 접어든 프론트엔드 개발자 정광묵 입니다. 꾸준함을
           유지하는 개발자를 지향합니다. 여행, 독서, 음식을 좋아합니다.✈️📚🍱
         </p>
@@ -55,7 +54,7 @@ export default function PageBanner() {
       </div>
       <div className="hidden grow justify-center md:flex">
         <Image
-          className="h-72 w-72 rounded-full object-cover p-4 shadow-2xl brightness-110 lg:h-96 lg:w-96"
+          className="h-72 w-72 rounded-full object-cover p-4 shadow-2xl brightness-110 lg:h-96 lg:w-96 dark:bg-slate-200 dark:shadow-slate-300"
           src={backgroundArr[randomImageIndex]}
           alt="Main Image"
           priority

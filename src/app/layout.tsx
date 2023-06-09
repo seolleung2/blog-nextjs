@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google';
 import { Metadata } from 'next';
 import classNames from 'classnames';
 import { PageHeader, PageFooter } from '@components/layout';
+import Providers from '@components/Providers';
 import {
   GOOGLE_VERIFICATION_CODE,
   NAVER_VERIFICATION_CODE,
@@ -26,14 +27,6 @@ export const metadata: Metadata = {
       'naver-site-verification': NAVER_VERIFICATION_CODE,
     },
   },
-  openGraph: {
-    title: '도토리정의 DevLog',
-    description: '프론트엔드 개발자 도토리정의 블로그 입니다.',
-    url: 'https://dotorimook-log.vercel.app/',
-    siteName: "Dotori Jung's Blog Application",
-    locale: 'ko_KR',
-    type: 'website',
-  },
 };
 
 export default function RootLayout({
@@ -43,10 +36,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={classNames(sans.className, 'scroll-smooth')}>
-      <body className="flex min-h-screen flex-col bg-light selection:bg-purple-400 selection:text-white">
-        <PageHeader />
-        <main className="mx-auto w-full max-w-7xl grow p-8">{children}</main>
-        <PageFooter />
+      <body className="flex min-h-screen flex-col bg-light selection:bg-purple-400 selection:text-white dark:bg-stone-900">
+        <Providers>
+          <PageHeader />
+          <main className="mx-auto w-full max-w-7xl grow p-8">{children}</main>
+          <PageFooter />
+        </Providers>
       </body>
     </html>
   );
