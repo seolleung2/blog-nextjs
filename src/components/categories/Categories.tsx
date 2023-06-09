@@ -17,7 +17,7 @@ export default function Categories({
 
   return (
     <div className="">
-      <h2 className="mb-4 text-xl font-bold text-slate-800 lg:text-2xl">
+      <h2 className="mb-4 text-xl font-bold text-slate-800 lg:text-2xl dark:text-white">
         Categories You&apos;ve Selected
       </h2>
       <CarouselCategories

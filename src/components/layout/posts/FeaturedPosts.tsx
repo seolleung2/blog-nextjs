@@ -7,7 +7,7 @@ export default async function FeaturedPosts() {
 
   return (
     <section className="mt-6">
-      <h2 className="mb-4 text-xl font-bold text-slate-800 lg:text-2xl">
+      <h2 className="mb-4 text-xl font-bold text-slate-800 lg:text-2xl dark:text-white">
         Featured Posts
       </h2>
       <PostList blogs={blogs} />

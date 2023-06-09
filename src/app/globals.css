@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark .markdown-viewer h2 {
+  color: white;
+}
+
+.dark .markdown-viewer h3 {
+  color: white;
+}
+
+.dark .markdown-viewer blockquote {
+  color: white;
+}
+
+.dark .markdown-viewer a {
+  color: white;
+}

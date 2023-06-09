@@ -28,7 +28,7 @@ export default function CategorizedPosts({ blogs, categories }: Props) {
         setCurrentCategory={setCurrentCategory}
       />
       <article className="mt-6">
-        <h2 className="mb-4 text-xl font-bold text-slate-800 lg:text-2xl">
+        <h2 className="mb-4 text-xl font-bold text-slate-800 lg:text-2xl dark:text-white">
           {currentCategory} Posts
         </h2>
         <PostList blogs={filteredPosts} />
