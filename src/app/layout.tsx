@@ -15,7 +15,16 @@ export const metadata: Metadata = {
   applicationName: "Dotori Jung's Blog Application",
   creator: 'Kwangmook Jung',
   publisher: 'Kwangmook Jung',
-  keywords: ['Next.js', 'React', 'JavaScript', 'Developer', 'Frontend'],
+  keywords: [
+    'Next.js',
+    'React',
+    'JavaScript',
+    'Developer',
+    'Frontend',
+    '도토리묵',
+    '도토리정',
+    'DevLog',
+  ],
   title: {
     default: '도토리정의 DevLog',
     template: '도토리정의 DevLog | %s',
@@ -35,7 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={classNames(sans.className, 'scroll-smooth')}>
+    <html
+      lang="en"
+      className={classNames(sans.className, 'scroll-smooth')}
+      suppressHydrationWarning
+    >
       <body className="flex min-h-screen flex-col bg-light selection:bg-purple-400 selection:text-white dark:bg-stone-900">
         <Providers>
           <PageHeader />

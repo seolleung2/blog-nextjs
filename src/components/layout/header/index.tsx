@@ -15,13 +15,13 @@ export default function PageHeader() {
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false);
 
   const handleChangeSetTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
-  }
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <header className="sticky top-0 z-10 bg-white drop-shadow-lg dark:bg-stone-800">
       <nav className="navbar mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-8">
-        <div className="logo flex items-center justify-between grow mr-6">
+        <div className="logo mr-6 flex grow items-center justify-between">
           <Link href="/" className="text-2xl font-bold">
             <h1 className="flex items-center gap-1.5 font-bold text-slate-800 dark:text-white">
               <GiAcorn className="text-3xl" />
@@ -29,7 +29,11 @@ export default function PageHeader() {
             </h1>
           </Link>
           <button type="button" onClick={handleChangeSetTheme}>
-            {theme === "light" ? <BsMoonFill className="text-2xl" /> : <BsSunFill className="text-2xl" />}
+            {theme === 'light' ? (
+              <BsMoonFill className="text-2xl" />
+            ) : (
+              <BsSunFill className="text-2xl" />
+            )}
           </button>
         </div>
         <ul className="links hidden gap-8 md:flex">
@@ -49,7 +53,7 @@ export default function PageHeader() {
       <div className="absolute w-full">
         <ul
           className={cn(
-            'dropdown_menu flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out md:hidden dark:bg-slate-700',
+            'dropdown_menu flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out dark:bg-slate-700 md:hidden',
             isOpenDropdown ? 'h-52' : 'h-0'
           )}
         >

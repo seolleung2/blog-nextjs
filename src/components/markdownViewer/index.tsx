@@ -14,7 +14,7 @@ type Props = {
 export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
-      className="prose min-w-full lg:prose-xl dark:text-white markdown-viewer"
+      className="markdown-viewer prose min-w-full lg:prose-lg dark:text-white"
       remarkPlugins={[remarkGfm]}
       components={{
         code({ node, inline, className, children, ...props }) {
