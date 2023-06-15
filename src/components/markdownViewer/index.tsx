@@ -15,6 +15,7 @@ export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
       className="markdown-viewer prose min-w-full lg:prose-lg dark:text-white"
+      linkTarget="_blank"
       remarkPlugins={[remarkGfm]}
       components={{
         code({ node, inline, className, children, ...props }) {
@@ -36,22 +37,12 @@ export default function MarkdownViewer({ content }: Props) {
         },
         img: (image: any) => (
           <Image
-            className="max-h-96 w-full object-contain"
+            className="max-h-[512px] w-full object-contain"
             src={image.src || ''}
             alt={image.alt || ''}
             width={500}
             height={350}
           />
-        ),
-        a: (data) => (
-          <a
-            className="overflow-hidden break-all"
-            href={data.href}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            {data.href}
-          </a>
         ),
         strong: ({ children }) => {
           return (

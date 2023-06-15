@@ -45,7 +45,7 @@ export default function MarkdownHeader({ blog }: Props) {
       <h1 className="mb-1 break-all text-2xl font-bold sm:text-4xl">
         {blog.title}
       </h1>
-      <p className="blog-detail-header-subtitle my-4 text-lg text-gray-600 sm:text-xl dark:text-gray-400">
+      <p className="blog-detail-header-subtitle my-4 text-lg text-gray-600 dark:text-gray-400 sm:text-xl">
         {blog.description}
       </p>
       <div className="relative mx-auto h-72 w-full bg-purple-100 sm:h-80 md:h-96">
