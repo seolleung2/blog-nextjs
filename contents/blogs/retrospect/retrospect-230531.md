@@ -6,7 +6,7 @@ authorImage: /images/me.jpeg
 coverImage: /images/retrospect/230531-main.jpeg
 date: '2023-06-04 19:16:00'
 categories: ['Retrospect']
-featured: true
+featured: false
 ---
 
 ## 🌷 시작하면서

@@ -6,7 +6,7 @@ authorImage: /images/me.jpeg
 coverImage: /images/memo/memos.png
 date: '2023-05-30 23:30:00'
 categories: ['Memo']
-featured: true
+featured: false
 ---
 
 ## 📝 메모의 목적 두 가지

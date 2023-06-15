@@ -6,7 +6,7 @@ authorImage: /images/me.jpeg
 coverImage:
 date: '2023-05-29 23:00:00'
 categories: ['React']
-featured: true
+featured: false
 ---
 
 ## 1. 들어가면서
