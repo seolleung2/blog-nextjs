@@ -7,5 +7,9 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <h1>ContactPage</h1>;
+  return (
+    <section className="w-auto text-center">
+      <h2 className="text-3xl font-bold">🚧현재 블로그 공사중 입니다.🚧</h2>
+    </section>
+  );
 }
