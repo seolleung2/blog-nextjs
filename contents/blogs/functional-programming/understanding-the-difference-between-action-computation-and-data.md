@@ -92,7 +92,7 @@ function subCouponRank(subscriber) {
 function selectCouponsByRank(coupons, rank) {
   const ret = [];
   for (let c = 0; c < coupons.length; c++) {
-    var coupon = coupons[c];
+    let coupon = coupons[c];
     if (coupon.rank === rank) {
       ret.push(coupon.code);
     }
