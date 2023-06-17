@@ -49,6 +49,9 @@ export default function RootLayout({
       className={classNames(sans.className, 'scroll-smooth')}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className="flex min-h-screen flex-col bg-light selection:bg-purple-400 selection:text-white dark:bg-stone-900">
         <Providers>
           <PageHeader />
