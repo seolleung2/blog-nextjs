@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-gray-200 py-8">
+    <div className="bg-gray-200 py-8 dark:bg-gray-800">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <h1 className="mb-4 text-3xl font-bold">About me.🫠</h1>
         <div className="overflow-hidden rounded-lg bg-white shadow">
@@ -20,14 +20,14 @@ export default function AboutPage() {
             width={500}
             height={350}
           />
-          <div className="px-4 py-5 sm:p-6">
+          <div className="px-4 py-5 dark:bg-slate-500 sm:p-6">
             <h2 className="mb-2 text-lg font-bold">
               안녕하세요! 봐주셔서 감사합니다:)
             </h2>
             <p>
               안녕하세요. 프론트엔드 개발자 2년차의 경험을 쌓아나가고 있는
               개발자 정광묵 이라고 합니다. 컴퓨터 과학 전공이 아닌 외식조리학과
-              전공 출신이고 개발(캄퓨터) 을 시작하기 전의 커리어는 식품회사에서
+              전공 출신이고 개발(컴퓨터) 을 시작하기 전의 커리어는 식품회사에서
               연구원으로서 소스, 시즈닝, 밀키트 및 레토르트 식품 군에 대한 연구
               개발을 담당했었습니다.
             </p>
@@ -45,7 +45,7 @@ export default function AboutPage() {
           <h2 className="mb-2 text-lg font-bold">
             개발자 여정을 시작하기 전에 가지고 있던 짧은 경험들
           </h2>
-          <div className="mt-4 flex items-center rounded-lg bg-[#f5f5f5] px-2 py-3 shadow-lg">
+          <div className="mt-4 flex items-center rounded-lg bg-[#f5f5f5] px-2 py-3 shadow-lg dark:bg-slate-500">
             <Image
               className="h-24 w-24 rounded-full"
               src="/images/culinary-arts.jpeg"
@@ -65,7 +65,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="mt-4 flex items-center rounded-lg bg-[#f5f5f5] px-2 py-3 shadow-lg">
+          <div className="mt-4 flex items-center rounded-lg bg-[#f5f5f5] px-2 py-3 shadow-lg dark:bg-slate-500">
             <Image
               className="h-24 w-24 rounded-full"
               src="/images/1st-brigade.jpeg"
@@ -85,7 +85,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="mt-4 flex items-center rounded-lg bg-[#f5f5f5] px-2 py-3 shadow-lg">
+          <div className="mt-4 flex items-center rounded-lg bg-[#f5f5f5] px-2 py-3 shadow-lg dark:bg-slate-500">
             <Image
               className="h-24 w-24 rounded-full"
               src="/images/sg-life.jpg"
@@ -104,7 +104,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="mt-4 flex items-center rounded-lg bg-[#f5f5f5] px-2 py-3 shadow-lg">
+          <div className="mt-4 flex items-center rounded-lg bg-[#f5f5f5] px-2 py-3 shadow-lg dark:bg-slate-500">
             <Image
               className="h-24 w-24 rounded-full"
               src="/images/food-industry.jpg"
