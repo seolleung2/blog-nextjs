@@ -14,7 +14,7 @@ export default function Detail({ navData, handleMovePage, type }: Props) {
   return (
     <div
       className={classNames(
-        'group relative flex h-16 w-1/2 cursor-pointer items-center space-x-2 rounded-md bg-slate-200 p-3 font-medium hover:bg-purple-500 hover:text-white md:h-28 md:bg-transparent md:font-bold md:text-white md:hover:bg-transparent',
+        'group relative flex h-16 w-1/2 cursor-pointer items-center space-x-2 rounded-md bg-violet-300 p-3 font-medium hover:bg-purple-500 hover:text-white md:h-28 md:bg-transparent md:font-bold md:text-white md:hover:bg-transparent',
         type === 'prev' ? 'justify-start' : 'justify-end'
       )}
       onClick={handleMovePage}
