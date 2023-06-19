@@ -132,6 +132,48 @@ export const ColorPaletteOfCategories = [
   },
 ];
 
+export type DetailExperienceItemType = {
+  title: string;
+  img_url: string;
+  description_first: string;
+  description_second: string;
+};
+
+export const DETAIL_EXPERIENCE_ITEMS: DetailExperienceItemType[] = [
+  {
+    title: '외식조리학전공',
+    img_url: '/images/culinary-arts.jpeg',
+    description_first:
+      '요리, 만드는 것을 좋아해서 대전에 소재한 조리학과에서 공부했습니다.',
+    description_second:
+      '인도 커리 팝업 스토어를 운영해보았던 경험, 와인 클래스를 통해 와인에 눈을 뜨게 된 계기의 시작이였습니다.',
+  },
+  {
+    title: '5602부대🦅',
+    img_url: '/images/1st-brigade.jpeg',
+    description_first:
+      '훈련소에서 각잡은 사람이 제 이름을 호명했던 것이 떠오릅니다.',
+    description_second:
+      '비행기에서 30키로 낙하산을 메고 뛰어내린 경험🪂 은 선택받은 기분이 들기에 충분했습니다.',
+  },
+  {
+    title: 'Commis Cook in SG',
+    img_url: '/images/merlion.jpeg',
+    description_first:
+      '정부해외인턴사업 인터뷰에 합격해 싱가폴에서 Commis Cook 으로 근무했습니다.',
+    description_second:
+      '어려움을 극복해보고 여행해 보며 그 자체로 좋은 추억, 경험이 되었습니다.',
+  },
+  {
+    title: '식품회사 연구원의 일상',
+    img_url: '/images/food-industry.jpg',
+    description_first:
+      '소스 (소스코드 X) 개발을 주력으로 하는 식품회사에서 6년여간 근무한 경험을 가지고 있습니다.',
+    description_second:
+      '대형마트에 제가 개발한 제품을 보고 뿌듯함을 느꼈던 추억이 있습니다.',
+  },
+];
+
 export const utterancesRepo = 'seolleung2/dotorimook-log';
 
 export const GOOGLE_VERIFICATION_CODE =
