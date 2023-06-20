@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="rounded-md dark:bg-transparent lg:bg-gray-200">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl lg:py-12">
         <h1 className="mb-4 pl-1 text-3xl font-bold">About me.🫠</h1>
         <div className="overflow-hidden rounded-lg bg-white shadow">
           <Image
