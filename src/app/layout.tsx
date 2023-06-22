@@ -13,6 +13,7 @@ const sans = Open_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   applicationName: "Dotori Jung's Blog Application",
+  metadataBase: new URL('https://dotorimook-log.vercel.app/'),
   creator: 'Kwangmook Jung',
   publisher: 'Kwangmook Jung',
   keywords: [
@@ -24,6 +25,11 @@ export const metadata: Metadata = {
     '도토리묵',
     '도토리정',
     'DevLog',
+    '개발',
+    '리액트',
+    '프론트엔드',
+    '정광묵',
+    '자바스크립트',
   ],
   title: {
     default: '도토리정의 DevLog',
