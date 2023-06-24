@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
@@ -12,11 +12,22 @@ import { CATEGORIES } from '@service/constant';
 
 export default function PageHeader() {
   const { theme, setTheme } = useTheme();
+  const dropMenuRef = useRef<HTMLDivElement | null>(null);
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false);
 
   const handleChangeSetTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
+
+  useEffect(() => {
+    const handleOutsideClose = (e: { target: any }) => {
+      if (isOpenDropdown && !dropMenuRef.current?.contains(e.target))
+        setIsOpenDropdown(false);
+    };
+    document.addEventListener('click', handleOutsideClose);
+
+    return () => document.removeEventListener('click', handleOutsideClose);
+  }, [isOpenDropdown]);
 
   return (
     <header className="sticky top-0 z-10 bg-white drop-shadow-lg dark:bg-stone-800">
@@ -50,11 +61,11 @@ export default function PageHeader() {
           {!isOpenDropdown ? <GoThreeBars /> : <IoMdClose />}
         </div>
       </nav>
-      <div className="absolute w-full">
+      <div className="absolute w-full" ref={dropMenuRef}>
         <ul
           className={cn(
             'dropdown_menu flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out dark:bg-slate-700 md:hidden',
-            isOpenDropdown ? 'h-52' : 'h-0'
+            isOpenDropdown ? 'h-40' : 'h-0'
           )}
         >
           {CATEGORIES.map(({ id, link, category }) => (
