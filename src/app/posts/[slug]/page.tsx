@@ -16,11 +16,12 @@ type Props = {
 export const generateMetadata = async ({
   params: { slug },
 }: Props): Promise<Metadata> => {
-  const { title, description } = await getBlogBySlug(slug);
+  const { title, description, categories } = await getBlogBySlug(slug);
 
   return {
     title,
     description,
+    category: categories.join(' ,'),
   };
 };
 
