@@ -20,11 +20,6 @@ export const CATEGORIES: Category[] = [
     category: 'Posts',
     link: '/posts',
   },
-  {
-    id: '4',
-    category: 'Contact',
-    link: '/contact',
-  },
 ];
 
 export const MONTH_NAMES = [
