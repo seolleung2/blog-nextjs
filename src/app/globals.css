@@ -25,3 +25,17 @@
 .dark .markdown-viewer th {
   color: white;
 }
+
+.markdown-viewer h2,
+.markdown-viewer h3 {
+  scroll-margin-top: 80px;
+}
+
+/* Safari-only */
+@supports (-webkit-hyphens: none) {
+  .markdown-viewer h2,
+  .markdown-viewer h3 {
+    padding-top: 80px;
+    margin-top: -80px;
+  }
+}
