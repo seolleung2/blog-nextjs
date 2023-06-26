@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dotorimook-log.vercel.app/
+
+# Sitemaps
+Sitemap: https://dotorimook-log.vercel.app/sitemap.xml
