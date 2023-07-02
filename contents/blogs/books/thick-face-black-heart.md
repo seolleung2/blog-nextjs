@@ -27,7 +27,7 @@ featured: false
 
 세번째는 어벤져스 엔드게임에 나오는 그 유명한 타노스가 있습니다.
 
-![](https://i.namu.wiki/i/qOpf6Bd08UNyvcTydaeT1gOWiPI5-iRqROKgrew-q8zYqH3blcgshSYd904Rifc3WUXoDwRIrLy5zYjXQR0kbW-WrAUbyJ9tWytSdW3iZy0wR0uhYJQgfUl4sWruI8ByLZch64T6IYBZ1W8qBW1qIA.webp)
+![](https://img.extmovie.com/files/attach/images/135/085/831/056/ac855834c5a3104fdafffa16c6251761.jpg)
 
 새로운 세대와 종족의 번성을 위해 인류의 절반을 날려 버리는 것이 꼭 필요한 과정이라고 말하는 타노스입니다. 생각에 따라 논란이 될지 모르겠지만 타노스가 무조건 악당 이라는 명제에서 영화 평론가나 개개인들이 일부 다른 시각을 내놓기도 했던 여운이 가시지 않던 영화였습니다.
 
