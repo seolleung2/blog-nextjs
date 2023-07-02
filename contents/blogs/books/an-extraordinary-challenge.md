@@ -6,7 +6,7 @@ authorImage: /images/me.jpeg
 coverImage: /images/extraordinary-challenge/an-extraordinary-challenge-thumbnail.jpeg
 date: '2023-06-25 12:08:00'
 categories: ['독서']
-featured: true
+featured: false
 ---
 
 ## 책을 읽게 된 계기
