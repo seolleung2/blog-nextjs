@@ -1,7 +1,9 @@
-import { Account, Client, Databases, ID } from 'appwrite';
+'use client';
+
+import { Client, Databases, ID } from 'appwrite';
 
 const client = new Client();
-const account = new Account(client);
+// const account = new Account(client);
 
 const database = process.env.NEXT_PUBLIC_DATABASE as string;
 const collection = process.env.NEXT_PUBLIC_MESSAGES_COLLECTION as string;
