@@ -26,7 +26,9 @@
       "@service/*": ["service/*"],
       "@service": ["service"],
       "@interfaces/*": ["interfaces/*"],
-      "@interfaces": ["interfaces"]
+      "@interfaces": ["interfaces"],
+      "@utils/*": ["utils/*"],
+      "@utils": ["utils"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

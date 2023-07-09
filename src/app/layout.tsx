@@ -3,7 +3,8 @@ import { Open_Sans } from 'next/font/google';
 import { Metadata } from 'next';
 import classNames from 'classnames';
 import { PageHeader, PageFooter } from '@components/layout';
-import Providers from '@components/Providers';
+import ThemeProviders from '@components/Providers';
+import Providers from '@utils/provider';
 import {
   GOOGLE_VERIFICATION_CODE,
   NAVER_VERIFICATION_CODE,
@@ -60,9 +61,13 @@ export default function RootLayout({
       </head>
       <body className="flex min-h-screen flex-col bg-light selection:bg-purple-400 selection:text-white dark:bg-stone-900">
         <Providers>
-          <PageHeader />
-          <main className="mx-auto w-full max-w-7xl grow p-8">{children}</main>
-          <PageFooter />
+          <ThemeProviders>
+            <PageHeader />
+            <main className="mx-auto w-full max-w-7xl grow p-8">
+              {children}
+            </main>
+            <PageFooter />
+          </ThemeProviders>
         </Providers>
       </body>
     </html>

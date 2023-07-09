@@ -17,10 +17,13 @@
     ]
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.29.19",
+    "@tanstack/react-query-devtools": "^4.29.19",
     "@types/node": "18.16.0",
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
     "@types/react-syntax-highlighter": "^15.5.7",
+    "appwrite": "^11.0.0",
     "classnames": "^2.3.2",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
