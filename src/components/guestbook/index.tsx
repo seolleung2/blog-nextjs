@@ -1,22 +1,35 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { addMessage, getMessages } from '@utils/Appwrite';
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
+// import { addMessage, getMessages } from '@utils/Appwrite';
+
+export const getMessages = async () => {
+  // const { documents: messages } = await databases.listDocuments(
+  //   database,
+  //   collection
+  // );
+  // return messages;
+
+  const response = await axios.get('/api/messages');
+
+  return response.data;
+};
 
 export default function Guestbook() {
   const [input, setInput] = useState<string>('');
 
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
-  const { data: messages, isFetching } = useQuery(['messages'], getMessages);
+  const { data, isFetching } = useQuery(['messages'], getMessages);
 
-  const addMessageMutation = useMutation(addMessage, {
-    onSuccess: () => {
-      setInput('');
-      queryClient.invalidateQueries(['messages']);
-    },
-  });
+  // const addMessageMutation = useMutation(addMessage, {
+  //   onSuccess: () => {
+  //     setInput('');
+  //     queryClient.invalidateQueries(['messages']);
+  //   },
+  // });
 
   return (
     <div className="flex w-full flex-col space-y-4 rounded-lg bg-white p-2 shadow-lg md:p-8">
@@ -39,7 +52,7 @@ export default function Guestbook() {
             className="h-full w-full resize-none rounded-l-md p-2 text-xs focus:outline-none md:text-sm"
           />
           <button
-            onClick={() => addMessageMutation.mutate(input)}
+            // onClick={() => addMessageMutation.mutate(input)}
             className="w-24 rounded-r-md border border-blue-600 bg-blue-500 px-4 py-2 text-xs text-white hover:bg-blue-600 md:text-sm"
           >
             제출하기
@@ -48,38 +61,45 @@ export default function Guestbook() {
       </div>
       <ul className="space-y-4 text-sm md:text-base">
         {!isFetching ? (
-          (messages || []).map((message) => {
-            const date = new Date(message.$createdAt).toLocaleDateString(
-              'ko-KR',
-              {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                weekday: 'long',
-              }
-            );
+          (data.messages || []).map(
+            (message: {
+              createdAt: Date;
+              updatedAt: Date;
+              id: number;
+              text: string;
+            }) => {
+              const date = new Date(message.createdAt).toLocaleDateString(
+                'ko-KR',
+                {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                  weekday: 'long',
+                }
+              );
 
-            const time = new Date(message.$createdAt).toLocaleTimeString(
-              'ko-KR',
-              {
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric',
-              }
-            );
+              const time = new Date(message.createdAt).toLocaleTimeString(
+                'ko-KR',
+                {
+                  hour: 'numeric',
+                  minute: 'numeric',
+                  second: 'numeric',
+                }
+              );
 
-            return (
-              <li
-                key={message.$id}
-                className="flex w-full flex-col items-start"
-              >
-                <p className="">{message.message}</p>
-                <span className="text-xs text-gray-700">
-                  {date} {time} 🚨
-                </span>
-              </li>
-            );
-          })
+              return (
+                <li
+                  key={message.id}
+                  className="flex w-full flex-col items-start"
+                >
+                  <p className="">{message.text}</p>
+                  <span className="text-xs text-gray-700">
+                    {date} {time} 🚨
+                  </span>
+                </li>
+              );
+            }
+          )
         ) : (
           <p>방명록 댓글들을 불러오는 중입니다🌷🌷🌷</p>
         )}
