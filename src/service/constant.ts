@@ -7,18 +7,23 @@ export type Category = {
 export const CATEGORIES: Category[] = [
   {
     id: '1',
-    category: 'Home',
+    category: '홈',
     link: '/',
   },
   {
     id: '2',
-    category: 'About',
+    category: '소개',
     link: '/about',
   },
   {
     id: '3',
-    category: 'Posts',
+    category: '블로그',
     link: '/posts',
+  },
+  {
+    id: '4',
+    category: '방명록',
+    link: '/guestbook',
   },
 ];
 
