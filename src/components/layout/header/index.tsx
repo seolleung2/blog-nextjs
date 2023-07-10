@@ -65,7 +65,7 @@ export default function PageHeader() {
         <ul
           className={cn(
             'dropdown_menu flex flex-col items-center justify-center overflow-hidden rounded-md bg-slate-100 opacity-95 duration-500 ease-in-out dark:bg-slate-700 md:hidden',
-            isOpenDropdown ? 'h-40' : 'h-0'
+            isOpenDropdown ? 'h-48' : 'h-0'
           )}
         >
           {CATEGORIES.map(({ id, link, category }) => (
