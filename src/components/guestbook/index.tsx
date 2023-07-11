@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { KeyboardEventHandler, useState } from 'react';
+import _ from 'lodash';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { addMessage, getMessages } from '@service/lib/messages';
 import LoadingSpinner from '@components/LoadingSpinner';
@@ -19,6 +20,19 @@ export default function Guestbook() {
     },
   });
 
+  const handleKeydown = _.debounce(
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === 'Enter') {
+        addMessageMutation.mutate(input);
+      }
+    },
+    400
+  );
+
+  const handleSubmit = _.debounce(() => {
+    addMessageMutation.mutate(input);
+  }, 400);
+
   return (
     <div className="flex h-[calc((100vh-14rem))] w-full flex-col space-y-4 rounded-lg bg-white px-6 py-4 shadow-lg dark:text-black md:p-8">
       <div className="flex flex-col space-y-4">
@@ -35,10 +49,11 @@ export default function Guestbook() {
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeydown}
             className="h-full w-full rounded-l-md p-2 text-xs focus:outline-none dark:bg-white md:text-sm"
           />
           <button
-            onClick={() => addMessageMutation.mutate(input)}
+            onClick={handleSubmit}
             className="w-24 rounded-r-md bg-blue-500 px-4 py-2 text-xs text-white hover:bg-blue-600 md:text-sm"
           >
             제출하기
