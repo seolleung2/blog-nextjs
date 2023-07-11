@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { addMessage, getMessages } from '@service/lib/messages';
+import LoadingSpinner from '@components/LoadingSpinner';
 
 export default function Guestbook() {
   const [input, setInput] = useState<string>('');
@@ -19,7 +20,7 @@ export default function Guestbook() {
   });
 
   return (
-    <div className="flex w-full flex-col space-y-4 rounded-lg bg-white p-2 shadow-lg md:p-8">
+    <div className="flex h-[calc((100vh-14rem))] w-full flex-col space-y-4 rounded-lg bg-white px-6 py-4 shadow-lg dark:text-black md:p-8">
       <div className="flex flex-col space-y-4">
         <h2 className="text-center text-3xl font-bold md:text-4xl">
           Guestbook
@@ -31,20 +32,20 @@ export default function Guestbook() {
           </p>
         </div>
         <div className="flex h-12 rounded-md border border-gray-300">
-          <textarea
+          <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="h-full w-full resize-none rounded-l-md p-2 text-xs focus:outline-none md:text-sm"
+            className="h-full w-full rounded-l-md p-2 text-xs focus:outline-none dark:bg-white md:text-sm"
           />
           <button
             onClick={() => addMessageMutation.mutate(input)}
-            className="w-24 rounded-r-md border border-blue-600 bg-blue-500 px-4 py-2 text-xs text-white hover:bg-blue-600 md:text-sm"
+            className="w-24 rounded-r-md bg-blue-500 px-4 py-2 text-xs text-white hover:bg-blue-600 md:text-sm"
           >
             제출하기
           </button>
         </div>
       </div>
-      <ul className="space-y-4 text-sm md:text-base">
+      <ul className="space-y-4 overflow-y-auto text-sm md:text-base">
         {!isFetching ? (
           (data.messages || []).map(
             (message: {
@@ -86,7 +87,7 @@ export default function Guestbook() {
             }
           )
         ) : (
-          <p>방명록 댓글들을 불러오는 중입니다🌷🌷🌷</p>
+          <LoadingSpinner />
         )}
       </ul>
     </div>

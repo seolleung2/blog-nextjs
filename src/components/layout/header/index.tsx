@@ -9,11 +9,14 @@ import { BsSunFill, BsMoonFill } from 'react-icons/bs';
 import { IoMdClose } from 'react-icons/io';
 import { GiAcorn } from 'react-icons/gi';
 import { CATEGORIES } from '@service/constant';
+import { useLoaded } from '@hooks/useLoaded';
 
 export default function PageHeader() {
   const { theme, setTheme } = useTheme();
   const dropMenuRef = useRef<HTMLDivElement | null>(null);
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false);
+
+  const loaded = useLoaded();
 
   const handleChangeSetTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -40,10 +43,14 @@ export default function PageHeader() {
             </h1>
           </Link>
           <button type="button" onClick={handleChangeSetTheme}>
-            {theme === 'light' ? (
-              <BsMoonFill className="text-2xl" />
-            ) : (
-              <BsSunFill className="text-2xl" />
+            {loaded && (
+              <>
+                {theme === 'light' ? (
+                  <BsMoonFill className="text-2xl" />
+                ) : (
+                  <BsSunFill className="text-2xl" />
+                )}
+              </>
             )}
           </button>
         </div>

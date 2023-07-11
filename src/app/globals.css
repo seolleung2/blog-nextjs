@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+input {
+  touch-action: manipulation;
+}
+
 .dark .markdown-viewer h2 {
   color: white;
 }
