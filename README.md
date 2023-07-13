@@ -1,6 +1,6 @@
 ## 🐶 도토리정의 개발 블로그 입니다.
 
-![https://github.com/seolleung2/seolleung2/assets/69143207/3e10614b-8992-4ebd-b896-fe03e1ef374c]
+![](https://github.com/seolleung2/seolleung2/assets/69143207/3e10614b-8992-4ebd-b896-fe03e1ef374c)
 
 블로그 주소 : https://dotorimook-log.vercel.app/
 
