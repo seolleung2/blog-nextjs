@@ -72,7 +72,7 @@ https://www.youtube.com/watch?v=dkeY7n4UFew
 학습을 위한 절차에는 발음 연습, 영어 어순 이해, 듣기 연습, 원어민과 말하기, 영어에 많이 노출될 방법을 찾기 등이 있습니다.
 ![](/images/ultra-learning/knowledge-of-english.png)
 
-해외에 취업하기 위해서 찾아보니 제가 속한 개발자 직군 (2136: PROGRAMMERS AND SOFTWARE DEVELOPMENT PROFESSIONALS) 은 Skilled Worker visa 에 해당하고 인터뷰, 비자 등을 진행하기 전 선결 조건이 바로 영어 시험 점수인데 IELTS for UKVI ➡ IELTS Life Skills (B1) 점수가 필요하다는 사실도 알게 되었습니다.
+찾아보니 제가 속한 개발자 직군 (2136: PROGRAMMERS AND SOFTWARE DEVELOPMENT PROFESSIONALS) 은 Skilled Worker visa 에 해당하고 인터뷰, 비자 등을 진행하기 전 선결 조건이 바로 영어 시험 점수인데 IELTS for UKVI ➡ IELTS Life Skills (B1) 점수가 필요하다는 사실도 알게 되었습니다.
 
 ### 어떻게 학습할 것인가?
 
@@ -100,3 +100,5 @@ https://www.youtube.com/watch?v=dkeY7n4UFew
 > 더 실컷 소리쳐 fun fun하게
 > 가장 좋아하는 표정을 짓고
 > 신나게 웃어봐
+
+[![Video Label](https://img.youtube.com/vi/okVTSehE414/0.jpg)](https://www.youtube.com/watch?v=okVTSehE414)
