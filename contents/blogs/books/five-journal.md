@@ -1,6 +1,6 @@
 ---
 title: 책멍듣멍 6주차 독서 감상 후기 - 1820일, 내 삶을 바꾸는 5년 노트, 파이브 저널을 읽고
-description: 트위터 개발자 분들의 독서 모임 "책멍듣멍" 에 참여하여 5주차 독서 후기를 적어 보았습니다.
+description: 트위터 개발자 분들의 독서 모임 "책멍듣멍" 에 참여하여 6주차 독서 후기를 적어 보았습니다.
 author: Dotori Jung 🌰
 authorImage: /images/me.jpeg
 coverImage: /images/five-journal/cover.jpeg
