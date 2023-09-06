@@ -1,6 +1,7 @@
 'use client';
 
-import React, { KeyboardEventHandler, useState } from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import _ from 'lodash';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { addMessage, getMessages } from '@service/lib/messages';
@@ -21,16 +22,28 @@ export default function Guestbook() {
   });
 
   const handleKeydown = _.debounce(
-    (event: React.KeyboardEvent<HTMLInputElement>) => {
+    async (event: React.KeyboardEvent<HTMLInputElement>) => {
       if (event.key === 'Enter') {
-        addMessageMutation.mutate(input);
+        if (!input) {
+          toast.error('메시지를 입력해 주세요.');
+          return;
+        }
+        await addMessageMutation.mutate(input);
+        toast.success('메시지를 제출하였습니다.');
+        setInput('');
       }
     },
     400
   );
 
-  const handleSubmit = _.debounce(() => {
-    addMessageMutation.mutate(input);
+  const handleSubmit = _.debounce(async () => {
+    if (!input) {
+      toast.error('메시지를 입력해 주세요.');
+      return;
+    }
+    await addMessageMutation.mutate(input);
+    toast.success('메시지를 제출하였습니다.');
+    setInput('');
   }, 400);
 
   return (

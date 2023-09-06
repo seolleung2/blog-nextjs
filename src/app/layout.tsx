@@ -5,6 +5,8 @@ import classNames from 'classnames';
 import { PageHeader, PageFooter } from '@components/layout';
 import ThemeProviders from '@components/Providers';
 import Providers from '@utils/provider';
+import ToasterProvider from '@providers/ToasterProvider';
+
 import {
   GOOGLE_VERIFICATION_CODE,
   NAVER_VERIFICATION_CODE,
@@ -68,6 +70,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col bg-light selection:bg-purple-400 selection:text-white dark:bg-stone-900">
         <Providers>
           <ThemeProviders>
+            <ToasterProvider />
             <PageHeader />
             <main className="mx-auto w-full max-w-7xl grow p-8">
               {children}
