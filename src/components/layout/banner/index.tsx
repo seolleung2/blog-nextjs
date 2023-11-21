@@ -28,7 +28,7 @@ export default function PageBanner() {
           Hello, I&apos;m{' '}
           <span className="text-purple-500 dark:text-purple-600">
             <ReactRotatingText
-              items={['Kwangmook', 'Creative Dev', 'Junior Dev']}
+              items={['Kwangmook', 'Dotorimook', '신뢰에요']}
             />
           </span>
         </h2>
@@ -36,8 +36,9 @@ export default function PageBanner() {
           Frontend Developer 🌞
         </h2>
         <p className="mb-7 text-lg font-medium text-slate-500 dark:text-slate-300 md:text-xl lg:text-2xl">
-          안녕하세요! 2년차에 접어든 프론트엔드 개발자 정광묵 입니다. 꾸준함을
-          유지하는 개발자를 지향합니다. 여행, 독서, 음식을 좋아합니다.✈️📚🍱
+          안녕하세요! 프론트엔드 개발자 정광묵 입니다. 꾸준함을 유지하는
+          개발자를 지향합니다. 🛫여행, 🏔️등산, 📚교보문고, 🍕맛집탐방을
+          좋아합니다
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button
