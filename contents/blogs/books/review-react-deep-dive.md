@@ -64,3 +64,5 @@ console.log(increase()); // 3
 increase 변수에 할당된 함수 handleIncreaseByOne 는 생성 당시 내부의 클로저 함수 외부 스코프에 있는 변수 privateValue 를 기억해 호출될 때마다 privateValue 값에 접근 가능합니다.
 
 privateValue 변수의 값은 함수 외부에서는 접근이 불가능 하기에 말 그대로 private 한 변수를 가질 수 있습니다.
+
+[도서 구매 링크 👉 https://product.kyobobook.co.kr/detail/S000210725203](https://product.kyobobook.co.kr/detail/S000210725203)
