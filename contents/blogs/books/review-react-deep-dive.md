@@ -65,4 +65,4 @@ increase 변수에 할당된 함수 handleIncreaseByOne 는 생성 당시 내부
 
 privateValue 변수의 값은 함수 외부에서는 접근이 불가능 하기에 말 그대로 private 한 변수를 가질 수 있습니다.
 
-[도서 구매 링크 👉 https://product.kyobobook.co.kr/detail/S000210725203](https://product.kyobobook.co.kr/detail/S000210725203)
+[[클릭!] 도서 구매 링크 🧚🏻](https://product.kyobobook.co.kr/detail/S000210725203)

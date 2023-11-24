@@ -67,7 +67,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="flex min-h-screen flex-col bg-light selection:bg-purple-400 selection:text-white dark:bg-stone-900">
+      <body
+        suppressHydrationWarning={true}
+        className="flex min-h-screen flex-col bg-light selection:bg-purple-400 selection:text-white dark:bg-stone-900"
+      >
         <Providers>
           <ThemeProviders>
             <ToasterProvider />
