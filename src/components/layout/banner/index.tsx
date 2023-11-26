@@ -1,22 +1,30 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import ReactRotatingText from 'react-rotating-text';
 import Button from '@components/button';
-import MainImage from '../../../../public/images/main-image.jpg';
-import MainImage2 from '../../../../public/images/main-image2.jpeg';
+import MainImage from '../../../../public/images/main-image.jpeg';
+import MainImage2 from '../../../../public/images/self-portrait.jpeg';
 import MainImage3 from '../../../../public/images/main-image3.jpeg';
+import MainImage4 from '../../../../public/images/hikers.jpeg';
+import MainImage5 from '../../../../public/images/cute-cat.jpg';
 
-const backgroundArr = [MainImage, MainImage2, MainImage3];
+const backgroundArr = [
+  MainImage,
+  MainImage2,
+  MainImage3,
+  MainImage4,
+  MainImage5,
+];
 
 export default function PageBanner() {
   const router = useRouter();
 
   const [randomImageIndex, setRandomImageIndex] = useState<number>(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const randomIndex = Math.floor(Math.random() * backgroundArr.length);
     setRandomImageIndex(randomIndex);
   }, []);
@@ -27,9 +35,7 @@ export default function PageBanner() {
         <h2 className="mb-4 select-none text-2xl font-extrabold text-slate-800 dark:text-white md:text-3xl lg:text-5xl">
           Hello, I&apos;m{' '}
           <span className="text-purple-500 dark:text-purple-600">
-            <ReactRotatingText
-              items={['Kwangmook', 'Dotorimook', '신뢰에요']}
-            />
+            <ReactRotatingText items={['Kwangmook', 'Dotorimook', 'Good']} />
           </span>
         </h2>
         <h2 className="mb-8 select-none text-2xl font-extrabold text-slate-800 dark:text-white md:text-3xl lg:text-5xl">
