@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import ReactRotatingText from 'react-rotating-text';
@@ -24,7 +24,7 @@ export default function PageBanner() {
 
   const [randomImageIndex, setRandomImageIndex] = useState<number>(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const randomIndex = Math.floor(Math.random() * backgroundArr.length);
     setRandomImageIndex(randomIndex);
   }, []);
